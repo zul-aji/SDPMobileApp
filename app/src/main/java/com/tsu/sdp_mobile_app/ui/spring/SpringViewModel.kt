@@ -1,13 +1,13 @@
-package com.tsu.sdp_mobile_app.ui.gallery
+package com.tsu.sdp_mobile_app.ui.spring
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class GalleryViewModel : ViewModel() {
+class SpringViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is gallery Fragment"
+        value = "This is spring Fragment"
     }
     val text: LiveData<String> = _text
 }

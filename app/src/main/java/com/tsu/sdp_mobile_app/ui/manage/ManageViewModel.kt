@@ -1,13 +1,13 @@
-package com.tsu.sdp_mobile_app.ui.home
+package com.tsu.sdp_mobile_app.ui.manage
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class ManageViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is manage Fragment"
     }
     val text: LiveData<String> = _text
 }

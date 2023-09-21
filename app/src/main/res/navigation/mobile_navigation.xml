@@ -3,23 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_dashboard">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.tsu.sdp_mobile_app.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_dashboard"
+        android:name="com.tsu.sdp_mobile_app.ui.dashboard.DashboardFragment"
+        android:label="@string/menu_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.tsu.sdp_mobile_app.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_autumn"
+        android:name="com.tsu.sdp_mobile_app.ui.autumn.AutumnFragment"
+        android:label="@string/menu_autumn"
+        tools:layout="@layout/fragment_autumn" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.tsu.sdp_mobile_app.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_spring"
+        android:name="com.tsu.sdp_mobile_app.ui.spring.SpringFragment"
+        android:label="@string/menu_spring"
+        tools:layout="@layout/fragment_spring" />
+
+    <fragment
+        android:id="@+id/nav_manage"
+        android:name="com.tsu.sdp_mobile_app.ui.manage.ManageFragment"
+        android:label="@string/menu_manage"
+        tools:layout="@layout/fragment_manage" />
 </navigation>
