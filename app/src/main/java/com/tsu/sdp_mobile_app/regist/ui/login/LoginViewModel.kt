@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Patterns
+import com.tsu.sdp_mobile_app.R
 import com.tsu.sdp_mobile_app.regist.data.LoginRepository
 import com.tsu.sdp_mobile_app.regist.data.Result
 
