@@ -13,6 +13,7 @@
     <string name="password">Password</string>
     <string name="login">Log in</string>
     <string name="forget">Forgot password?</string>
+    <string name="signup">Sign Up</string>
 
     <!--    Forget page-->
     <string name="forget_pg">Forgot your password?</string>
@@ -30,4 +31,18 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <!--    REGIST  -->
+    <string name="fullname">Full Legal Name</string>
+    <string name="dateof">Date of birth</string>
+    <string name="emailreg">Email</string>
+    <string name="phone">Phone</string>
+    <string name="faculty">Faculty</string>
+    <string name="grade">Grade</string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+
 </resources>
