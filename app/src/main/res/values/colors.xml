@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red_text">#FFEF4565</color>
+    <color name="green_spring">#FF62DE93</color>
+    <color name="yellow_autumn">#FFFFCF87</color>
 </resources>

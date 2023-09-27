@@ -12,9 +12,8 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
+import com.tsu.sdp_mobile_app.R
 import com.tsu.sdp_mobile_app.databinding.ActivityLoginBinding
-
-import com.tsu.sdp_mobile_app.regist.R
 
 class LoginActivity : AppCompatActivity() {
 

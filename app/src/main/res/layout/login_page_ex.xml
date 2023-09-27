@@ -59,8 +59,13 @@
         <EditText
             android:id="@+id/edt_email"
             android:layout_width="match_parent"
+<<<<<<< Updated upstream
             android:layout_height="wrap_content"
             android:background="@drawable/retangle_box_style"
+=======
+            android:layout_height="49dp"
+            android:background="@drawable/rectangle_box_style"
+>>>>>>> Stashed changes
             android:ems="10"
             android:hint="@string/prompt_email"
             android:inputType="text"

@@ -6,17 +6,152 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+    <ImageView
+        android:id="@+id/mainBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="141dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/main_img"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <TextView
+        android:id="@+id/navigateTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Navigate to"
+        android:textColor="#006BB4"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainBanner"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <Button
+        android:id="@+id/autumnButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="0dp"
+        android:paddingStart="5dp"
+        android:layout_marginHorizontal="70dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintVertical_bias="0"
+        android:text="Autumn Period"
+        android:drawableLeft="@drawable/autumn_logo"
+        app:backgroundTint="@color/yellow_autumn"
+        app:background="@drawable/back_yellow"
+        android:theme="@style/Widget.AppCompat.Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navigateTo" />
+
+    <Button
+        android:id="@+id/springButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="0dp"
+        android:paddingStart="5dp"
+        android:layout_marginHorizontal="70dp"
+        app:layout_constraintVertical_bias="0.03"
+        android:text="Spring Period"
+        android:drawableLeft="@drawable/spring_logo"
+        app:backgroundTint="@color/green_spring"
+        android:background="@drawable/back_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autumnButton" />
+
+    <TextView
+        android:id="@+id/manage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage"
+        android:textColor="#006BB4"
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/springButton" />
+
+    <Button
+        android:id="@+id/facultyButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="Faculty"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rectangle_box_style"
+        android:textColor="@color/primary_blue"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/directionButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manage" />
+
+    <Button
+        android:id="@+id/directionButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="Eductional Directions"
+        android:maxLines="2"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rectangle_box_style"
+        android:textColor="@color/primary_blue"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/facultyButton"
+        app:layout_constraintTop_toBottomOf="@+id/manage" />
+
+    <Button
+        android:id="@+id/groupsButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="Groups"
+        android:background="@drawable/rectangle_box_style"
+        app:backgroundTint="#FFFFFF"
+        android:textColor="@color/primary_blue"
+        app:layout_constraintVertical_bias="0.07"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/disciplinesButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/facultyButton" />
+
+    <Button
+        android:id="@+id/disciplinesButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="Disciplines"
+        android:background="@drawable/rectangle_box_style"
+        android:textColor="@color/primary_blue"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintVertical_bias="0.07"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/groupsButton"
+        app:layout_constraintTop_toBottomOf="@+id/directionButton" />
+
+    <Button
+        android:id="@+id/requestButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:background="@drawable/rectangle_box_style"
+        android:textColor="@color/primary_blue"
+        app:backgroundTint="#FFFFFF"
+        android:text="Request"
+        app:layout_constraintVertical_bias="0.12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupsButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

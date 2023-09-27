@@ -8,8 +8,6 @@ import com.tsu.sdp_mobile_app.R
 import com.tsu.sdp_mobile_app.regist.data.LoginRepository
 import com.tsu.sdp_mobile_app.regist.data.Result
 
-import com.tsu.sdp_mobile_app.regist.R
-
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 
     private val _loginForm = MutableLiveData<LoginFormState>()
