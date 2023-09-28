@@ -39,10 +39,8 @@
     <string name="phone">Phone</string>
     <string name="faculty">Faculty</string>
     <string name="grade">Grade</string>
-    <string name=""></string>
-    <string name=""></string>
-    <string name=""></string>
-    <string name=""></string>
-    <string name=""></string>
+    <string name="regist">Register</string>
+    <string name="nextpg">Next</string>
+    <string name="cancel">Cancel</string>
 
 </resources>

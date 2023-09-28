@@ -5,6 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/btn_next_reg"
+        android:layout_width="154dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@color/primary_blue"
+        android:text="@string/nextpg"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.3" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
@@ -29,8 +44,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/welcome"
+        android:layout_marginTop="16dp"
+        android:text="@string/regist"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -42,7 +57,7 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="24dp"
         android:orientation="vertical"
         android:paddingStart="42dp"
         android:paddingEnd="42dp"
@@ -134,8 +149,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/retangle_box_style"
-            android:padding="10dp">
-        </Spinner>
+            android:padding="10dp"></Spinner>
 
         <TextView
             android:id="@+id/tv_grade_reg"
@@ -150,9 +164,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/retangle_box_style"
-            android:padding="10dp">
-        </Spinner>
+            android:padding="10dp"></Spinner>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:textColor="@color/red_text"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_next_reg"
+        app:layout_constraintVertical_bias="0.35000002" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
