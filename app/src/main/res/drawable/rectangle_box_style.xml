@@ -5,7 +5,7 @@
 
     <!-- Rectangle border -->
     <stroke
-        android:width="3dp"
+        android:width="5dp"
     android:color="@color/blue_light" />
 
     <!-- Rounded corners -->
