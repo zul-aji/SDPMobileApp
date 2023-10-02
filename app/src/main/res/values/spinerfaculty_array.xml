@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="spinerfaculty_array">
-        <item>Faculty</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
+        <item>Faculty 1</item>
+        <item>Faculty 2</item>
+        <item>Faculty 3</item>
+        <item>Faculty 4</item>
         <item>HITS</item>
     </string-array>
 </resources>
