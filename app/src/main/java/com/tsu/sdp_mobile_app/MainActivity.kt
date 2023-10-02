@@ -1,5 +1,6 @@
 package com.tsu.sdp_mobile_app
 
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
@@ -11,6 +12,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import com.tsu.sdp_mobile_app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +28,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
+
+        binding.appBarMain.toolbar.setNavigationIcon(R.drawable.hamburger_menu)
+        supportActionBar?.setDisplayShowTitleEnabled(false) // Optional: Hide the title text
+        binding.appBarMain.toolbar.setOnMenuItemClickListener { false } // Disable options menu
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
