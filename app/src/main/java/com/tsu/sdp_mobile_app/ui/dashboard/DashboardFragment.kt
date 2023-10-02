@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import androidx.lifecycle.ViewModelProvider
+import com.tsu.sdp_mobile_app.R
 import com.tsu.sdp_mobile_app.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
@@ -22,13 +24,14 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
-
+        ViewModelProvider(this)[DashboardViewModel::class.java]
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        return root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
 
     override fun onDestroyView() {

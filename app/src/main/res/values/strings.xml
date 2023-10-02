@@ -39,10 +39,7 @@
     <string name="phone">Phone</string>
     <string name="faculty">Faculty</string>
     <string name="grade">Grade</string>
-    <string name=""></string>
-    <string name=""></string>
-    <string name=""></string>
-    <string name=""></string>
-    <string name=""></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

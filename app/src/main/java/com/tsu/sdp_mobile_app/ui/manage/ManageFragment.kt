@@ -1,14 +1,16 @@
 package com.tsu.sdp_mobile_app.ui.manage
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.tsu.sdp_mobile_app.admin.FacultyActivity
+import com.tsu.sdp_mobile_app.admin.GroupActivity
+import com.tsu.sdp_mobile_app.admin.ProgrammeActivity
 import com.tsu.sdp_mobile_app.databinding.FragmentManageBinding
-import com.tsu.sdp_mobile_app.ui.manage.ManageViewModel
 
 class ManageFragment : Fragment() {
 
@@ -24,16 +26,29 @@ class ManageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val manageViewModel =
-            ViewModelProvider(this).get(ManageViewModel::class.java)
+            ViewModelProvider(this)[ManageViewModel::class.java]
 
         _binding = FragmentManageBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        val textView: TextView = binding.textHome
-        manageViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.facultyButton.setOnClickListener {
+            val nextPage = Intent(context, FacultyActivity::class.java)
+            startActivity(nextPage)
         }
-        return root
+
+        binding.groupsButton.setOnClickListener {
+            val nextPage = Intent(context, GroupActivity::class.java)
+            startActivity(nextPage)
+        }
+
+        binding.directionButton.setOnClickListener {
+            val nextPage = Intent(context, ProgrammeActivity::class.java)
+            startActivity(nextPage)
+        }
     }
 
     override fun onDestroyView() {

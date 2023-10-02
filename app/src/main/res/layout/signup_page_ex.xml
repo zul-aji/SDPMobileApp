@@ -62,7 +62,7 @@
             android:id="@+id/edt_name_reg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/retangle_box_style"
+            android:background="@drawable/rectangle_box_style"
             android:ems="10"
             android:hint="Full Name"
             android:inputType="text"
@@ -80,7 +80,7 @@
             android:id="@+id/edt_dob_reg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/retangle_box_style"
+            android:background="@drawable/rectangle_box_style"
             android:ems="10"
             android:inputType="text"
             android:padding="10dp" />
@@ -97,7 +97,7 @@
             android:id="@+id/edt_email_reg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/retangle_box_style"
+            android:background="@drawable/rectangle_box_style"
             android:ems="10"
             android:hint="@string/emailreg"
             android:inputType="textEmailAddress"
@@ -115,7 +115,7 @@
             android:id="@+id/edt_phone_reg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/retangle_box_style"
+            android:background="@drawable/rectangle_box_style"
             android:ems="10"
             android:hint="Phone"
             android:inputType="phone"
@@ -133,7 +133,7 @@
             android:id="@+id/spiner_faculty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/retangle_box_style"
+            android:background="@drawable/rectangle_box_style"
             android:padding="10dp">
         </Spinner>
 
@@ -149,7 +149,7 @@
             android:id="@+id/spiner_grade"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/retangle_box_style"
+            android:background="@drawable/rectangle_box_style"
             android:padding="10dp">
         </Spinner>
 

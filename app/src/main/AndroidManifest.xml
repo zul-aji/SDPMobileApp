@@ -13,6 +13,21 @@
         android:theme="@style/Theme.SDP_mobile_app"
         tools:targetApi="31">
         <activity
+            android:name=".admin.ProgrammeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.GroupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.FacultyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.ManageActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login" />
