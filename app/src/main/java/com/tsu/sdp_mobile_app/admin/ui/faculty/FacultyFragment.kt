@@ -1,5 +1,6 @@
 package com.tsu.sdp_mobile_app.admin.ui.faculty
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
+import com.tsu.sdp_mobile_app.admin.GroupActivity
 import com.tsu.sdp_mobile_app.databinding.FragmentFacultyBinding
 
 class FacultyFragment : Fragment() {
@@ -27,7 +29,8 @@ class FacultyFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_faculty, container, false)
+        binding = FragmentFacultyBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
