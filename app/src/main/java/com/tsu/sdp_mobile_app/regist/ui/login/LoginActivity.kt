@@ -1,6 +1,7 @@
 package com.tsu.sdp_mobile_app.regist.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -12,7 +13,9 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
+import com.tsu.sdp_mobile_app.MainActivity
 import com.tsu.sdp_mobile_app.R
+import com.tsu.sdp_mobile_app.admin.FacultyActivity
 import com.tsu.sdp_mobile_app.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -26,9 +29,9 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val username = binding.edtEmailUsername
-        val password = binding.edtPassword
-        val login = binding.btnLogin
+        val username = binding.edtEmail
+        val password = binding.editTextTextPassword
+        val login = binding.button
 
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
             .get(LoginViewModel::class.java)
@@ -89,7 +92,9 @@ class LoginActivity : AppCompatActivity() {
             }
 
             login.setOnClickListener {
-                loginViewModel.login(username.text.toString(), password.text.toString())
+                //loginViewModel.login(username.text.toString(), password.text.toString())
+                val nextPage = Intent(context, MainActivity::class.java)
+                startActivity(nextPage)
             }
         }
     }

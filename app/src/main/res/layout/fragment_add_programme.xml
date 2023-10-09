@@ -137,6 +137,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/prog_phone_tv" />
 
+    <TextView
+        android:id="@+id/prog_faculty_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Faculty"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="40dp"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prog_edit_phone" />
+
+    <Spinner
+        android:id="@+id/prog_faculty_spin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:background="@drawable/rectangle_box_style"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prog_faculty_tv"/>
+
     <Button
         android:id="@+id/add_add_prog_button"
         android:layout_width="100dp"
@@ -149,7 +176,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prog_edit_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/prog_faculty_spin"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

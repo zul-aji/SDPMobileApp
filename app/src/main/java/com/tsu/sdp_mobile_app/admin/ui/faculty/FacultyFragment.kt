@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
+import com.tsu.sdp_mobile_app.databinding.FragmentFacultyBinding
 
 class FacultyFragment : Fragment() {
+    private lateinit var binding: FragmentFacultyBinding
 
     companion object {
         fun newInstance() = FacultyFragment()
@@ -19,7 +21,6 @@ class FacultyFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this)[FacultyViewModel::class.java]
-        // TODO: Use the ViewModel
     }
 
     override fun onCreateView(
@@ -27,6 +28,16 @@ class FacultyFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         return inflater.inflate(R.layout.fragment_faculty, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.addFaculties.setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.frag_faculty_fl, AddFacultyFragment())
+                commit()
+            }
+        }
     }
 
 }
