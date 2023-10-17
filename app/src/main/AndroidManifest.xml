@@ -39,6 +39,10 @@
             android:name="com.tsu.sdp_mobile_app.admin.ProgrammeActivity"
             android:label="ProgrammeActivity">
         </activity>
+        <activity
+            android:name="com.tsu.sdp_mobile_app.admin.CourseworkActivity"
+            android:label="CourseworkActivity">
+        </activity>
     </application>
 
 </manifest>

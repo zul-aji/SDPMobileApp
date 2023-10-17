@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.tsu.sdp_mobile_app.admin.CourseworkActivity
 import com.tsu.sdp_mobile_app.admin.FacultyActivity
 import com.tsu.sdp_mobile_app.admin.GroupActivity
 import com.tsu.sdp_mobile_app.admin.ProgrammeActivity
@@ -47,6 +48,11 @@ class ManageFragment : Fragment() {
 
         binding.directionButton.setOnClickListener {
             val nextPage = Intent(context, ProgrammeActivity::class.java)
+            startActivity(nextPage)
+        }
+
+        binding.disciplinesButton.setOnClickListener {
+            val nextPage = Intent(context, CourseworkActivity::class.java)
             startActivity(nextPage)
         }
     }
