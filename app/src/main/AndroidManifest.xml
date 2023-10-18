@@ -13,11 +13,18 @@
         android:theme="@style/Theme.SDP_mobile_app"
         tools:targetApi="31">
         <activity
+            android:name=".regist.ui.Register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".regist.ui.forgetpw.ForgetActivity"
+            android:exported="false" />
+        <activity
             android:name=".regist.ui.login.LoginActivity"
             android:exported="true"
             android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -25,24 +32,19 @@
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/app_name"
-            android:theme="@style/Theme.SDP_mobile_app.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.SDP_mobile_app.NoActionBar" />
         <activity
-            android:name="com.tsu.sdp_mobile_app.admin.FacultyActivity"
-            android:label="FacultyActivity">
-        </activity>
+            android:name=".admin.FacultyActivity"
+            android:label="FacultyActivity" />
         <activity
-            android:name="com.tsu.sdp_mobile_app.admin.GroupActivity"
-            android:label="GroupActivity">
-        </activity>
+            android:name=".admin.GroupActivity"
+            android:label="GroupActivity" />
         <activity
-            android:name="com.tsu.sdp_mobile_app.admin.ProgrammeActivity"
-            android:label="ProgrammeActivity">
-        </activity>
+            android:name=".admin.ProgrammeActivity"
+            android:label="ProgrammeActivity" />
         <activity
-            android:name="com.tsu.sdp_mobile_app.admin.CourseworkActivity"
-            android:label="CourseworkActivity">
-        </activity>
+            android:name=".admin.CourseworkActivity"
+            android:label="CourseworkActivity" />
     </application>
 
 </manifest>
