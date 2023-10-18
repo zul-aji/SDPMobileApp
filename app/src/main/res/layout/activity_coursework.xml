@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="admin.ProgrammeActivity">
+    tools:context="admin.CourseworkActivity">
 
     <FrameLayout
-        android:id="@+id/frag_prog_fl"
+        android:id="@+id/frag_coursework_fl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

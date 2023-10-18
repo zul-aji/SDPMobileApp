@@ -1,6 +1,5 @@
-package com.tsu.sdp_mobile_app.admin.ui.faculty
+package com.tsu.sdp_mobile_app.admin.ui.coursework
 
-import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,36 +7,38 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
-import com.tsu.sdp_mobile_app.admin.GroupActivity
+import com.tsu.sdp_mobile_app.admin.ui.faculty.AddFacultyFragment
+import com.tsu.sdp_mobile_app.admin.ui.faculty.FacultyViewModel
+import com.tsu.sdp_mobile_app.databinding.FragmentCourseworkBinding
 import com.tsu.sdp_mobile_app.databinding.FragmentFacultyBinding
 
-class FacultyFragment : Fragment() {
-    private lateinit var binding: FragmentFacultyBinding
+class CourseworkFragment : Fragment() {
+    private lateinit var binding: FragmentCourseworkBinding
 
     companion object {
-        fun newInstance() = FacultyFragment()
+        fun newInstance() = CourseworkFragment()
     }
 
-    private lateinit var viewModel: FacultyViewModel
+    private lateinit var viewModel: CourseworkViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[FacultyViewModel::class.java]
+        viewModel = ViewModelProvider(this)[CourseworkViewModel::class.java]
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentFacultyBinding.inflate(inflater, container, false)
+        binding = FragmentCourseworkBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.addFaculties.setOnClickListener {
+        binding.addCoursework.setOnClickListener {
             parentFragmentManager.beginTransaction().apply {
-                replace(R.id.frag_faculty_fl, AddFacultyFragment())
+                replace(R.id.frag_coursework_fl, AddCourseworkFragment())
                 commit()
             }
         }

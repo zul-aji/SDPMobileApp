@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.admin.ui.programme
+package com.tsu.sdp_mobile_app.admin.ui.group
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,23 +7,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
+import com.tsu.sdp_mobile_app.admin.ui.programme.ProgrammeFragment
+import com.tsu.sdp_mobile_app.databinding.FragmentAddGroupBinding
 import com.tsu.sdp_mobile_app.databinding.FragmentAddProgrammeBinding
-import com.tsu.sdp_mobile_app.databinding.FragmentProgrammeBinding
 
-class AddProgrammeFragment : Fragment() {
-    private lateinit var binding: FragmentAddProgrammeBinding
+class AddGroupFragment : Fragment() {
+    private lateinit var binding: FragmentAddGroupBinding
 
     companion object {
-        fun newInstance() = AddProgrammeFragment()
+        fun newInstance() = AddGroupFragment()
     }
 
-    private lateinit var viewModel: AddProgrammeViewModel
+    private lateinit var viewModel: AddGroupViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentAddProgrammeBinding.inflate(inflater, container, false)
+        binding = FragmentAddGroupBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -31,7 +32,7 @@ class AddProgrammeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.backArrow.setOnClickListener {
             parentFragmentManager.beginTransaction().apply {
-                replace(R.id.frag_prog_fl, ProgrammeFragment())
+                replace(R.id.frag_group_fl, GroupFragment())
                 commit()
             }
         }

@@ -7,8 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
+import com.tsu.sdp_mobile_app.admin.ui.faculty.AddFacultyFragment
+import com.tsu.sdp_mobile_app.databinding.FragmentProgrammeBinding
 
 class ProgrammeFragment : Fragment() {
+    private lateinit var binding: FragmentProgrammeBinding
 
     companion object {
         fun newInstance() = ProgrammeFragment()
@@ -19,14 +22,24 @@ class ProgrammeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this)[ProgrammeViewModel::class.java]
-        // TODO: Use the ViewModel
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_programme, container, false)
+        binding = FragmentProgrammeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.addProgram.setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.frag_prog_fl, AddProgrammeFragment())
+                commit()
+            }
+        }
     }
 
 }

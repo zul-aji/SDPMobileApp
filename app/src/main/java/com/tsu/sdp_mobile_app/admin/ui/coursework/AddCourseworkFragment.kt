@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.admin.ui.programme
+package com.tsu.sdp_mobile_app.admin.ui.coursework
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,23 +7,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
-import com.tsu.sdp_mobile_app.databinding.FragmentAddProgrammeBinding
-import com.tsu.sdp_mobile_app.databinding.FragmentProgrammeBinding
+import com.tsu.sdp_mobile_app.databinding.FragmentAddCourseworkBinding
 
-class AddProgrammeFragment : Fragment() {
-    private lateinit var binding: FragmentAddProgrammeBinding
+class AddCourseworkFragment : Fragment() {
+    private lateinit var binding: FragmentAddCourseworkBinding
 
     companion object {
-        fun newInstance() = AddProgrammeFragment()
+        fun newInstance() = AddCourseworkFragment()
     }
 
-    private lateinit var viewModel: AddProgrammeViewModel
+    private lateinit var viewModel: AddCourseworkViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentAddProgrammeBinding.inflate(inflater, container, false)
+        binding = FragmentAddCourseworkBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -31,7 +30,7 @@ class AddProgrammeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.backArrow.setOnClickListener {
             parentFragmentManager.beginTransaction().apply {
-                replace(R.id.frag_prog_fl, ProgrammeFragment())
+                replace(R.id.frag_coursework_fl, CourseworkFragment())
                 commit()
             }
         }

@@ -27,6 +27,22 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.SDP_mobile_app.NoActionBar">
         </activity>
+        <activity
+            android:name="com.tsu.sdp_mobile_app.admin.FacultyActivity"
+            android:label="FacultyActivity">
+        </activity>
+        <activity
+            android:name="com.tsu.sdp_mobile_app.admin.GroupActivity"
+            android:label="GroupActivity">
+        </activity>
+        <activity
+            android:name="com.tsu.sdp_mobile_app.admin.ProgrammeActivity"
+            android:label="ProgrammeActivity">
+        </activity>
+        <activity
+            android:name="com.tsu.sdp_mobile_app.admin.CourseworkActivity"
+            android:label="CourseworkActivity">
+        </activity>
     </application>
 
 </manifest>
