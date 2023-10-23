@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/add_edudir"
+    android:id="@+id/add_discipline"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.ui.faculty.AddFacultyFragment">
+    tools:context=".admin.ui.discipline.AddDisciplineFragment">
 
     <ImageView
         android:id="@+id/back_arrow"
@@ -21,10 +21,10 @@
         app:layout_constraintVertical_bias="0"/>
 
     <TextView
-        android:id="@+id/add_edudir_tv"
+        android:id="@+id/add_discipline_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Faculty"
+        android:text="Add Discipline"
         android:textColor="#006BB4"
         android:textSize="30dp"
         android:textStyle="bold"
@@ -35,20 +35,20 @@
         app:layout_constraintVertical_bias="0.1" />
 
     <TextView
-        android:id="@+id/edudir_name_tv"
+        android:id="@+id/discipline_name_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Faculty Name"
-        android:textStyle="bold"
         android:layout_marginHorizontal="40dp"
-        app:layout_constraintVertical_bias="0.05"
+        android:text="Discipline Name"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_edudir_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_tv"
+        app:layout_constraintVertical_bias="0.05" />
 
     <EditText
-        android:id="@+id/edit_edudir_name"
+        android:id="@+id/edit_discipline_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
@@ -61,97 +61,37 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edudir_name_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/discipline_name_tv" />
 
     <TextView
-        android:id="@+id/edudir_director_tv"
+        android:id="@+id/edudir_coursework_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dean Name"
-        android:textStyle="bold"
         android:layout_marginHorizontal="40dp"
-        app:layout_constraintVertical_bias="0.05"
+        android:text="Educational Direction"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_edudir_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_discipline_name"
+        app:layout_constraintVertical_bias="0.05" />
 
-    <EditText
-        android:id="@+id/edit_edudir_director_name"
+    <Spinner
+        android:id="@+id/edudir_discipline_spin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
-        android:padding="6dp"
-        android:textSize="20dp"
-        android:ems="10"
-        android:inputType="text"
         android:background="@drawable/rectangle_box_style"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="10dp"
         app:layout_constraintVertical_bias="0.01"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edudir_director_tv" />
-
-    <TextView
-        android:id="@+id/fac_email_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Email"
-        android:textStyle="bold"
-        android:layout_marginHorizontal="40dp"
-        app:layout_constraintVertical_bias="0.05"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_edudir_director_name" />
-
-    <EditText
-        android:id="@+id/edit_fac_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:padding="6dp"
-        android:textSize="20dp"
-        android:ems="10"
-        android:inputType="text"
-        android:background="@drawable/rectangle_box_style"
-        app:layout_constraintVertical_bias="0.01"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fac_email_tv" />
-
-    <TextView
-        android:id="@+id/fac_phone_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Phone"
-        android:textStyle="bold"
-        android:layout_marginHorizontal="40dp"
-        app:layout_constraintVertical_bias="0.05"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_fac_email" />
-
-    <EditText
-        android:id="@+id/edit_fac_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:padding="6dp"
-        android:textSize="20dp"
-        android:ems="10"
-        android:inputType="text"
-        android:background="@drawable/rectangle_box_style"
-        app:layout_constraintVertical_bias="0.01"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fac_phone_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/edudir_coursework_tv"/>
 
     <Button
-        android:id="@+id/add_add_fac_button"
+        android:id="@+id/add_add_discipline_button"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@drawable/back_blue"
@@ -162,7 +102,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_fac_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/edudir_discipline_spin"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

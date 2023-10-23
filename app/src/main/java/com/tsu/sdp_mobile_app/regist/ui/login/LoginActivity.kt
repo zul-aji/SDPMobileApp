@@ -8,7 +8,6 @@ import com.tsu.sdp_mobile_app.regist.ui.Register.RegisterActivity
 import com.tsu.sdp_mobile_app.regist.ui.forgetpw.ForgetActivity
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var loginViewModel: LoginViewModel
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -3,39 +3,81 @@ package com.tsu.sdp_mobile_app.admin.ui.faculty
 import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.tsu.sdp_mobile_app.R
 import com.tsu.sdp_mobile_app.admin.GroupActivity
+import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
+import com.tsu.sdp_mobile_app.admin.data.network.Resource
+import com.tsu.sdp_mobile_app.admin.data.repository.FacultyRepo
+import com.tsu.sdp_mobile_app.admin.data.response.Faculty
+import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentFacultyBinding
+import java.util.zip.Inflater
 
-class FacultyFragment : Fragment() {
-    private lateinit var binding: FragmentFacultyBinding
+class FacultyFragment :
+    BaseFragment<FacultyViewModel, FragmentFacultyBinding, FacultyRepo>() {
 
-    companion object {
-        fun newInstance() = FacultyFragment()
-    }
+    private lateinit var facAdapter: FacultyAdapter
+    private lateinit var facultyName: String
+    private val facList = ArrayList<Faculty>()
+    override fun getViewModel() = FacultyViewModel::class.java
 
-    private lateinit var viewModel: FacultyViewModel
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ) = FragmentFacultyBinding.inflate(inflater, container, false)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[FacultyViewModel::class.java]
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentFacultyBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    override fun getFragmentRepository() = FacultyRepo(dataSource.buildAPI(requireContext(), APIRequest::class.java))
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.addFaculties.setOnClickListener {
+
+        binding.facultiesRv.layoutManager = LinearLayoutManager(activity)
+
+        viewModel.getFaculty()
+        viewModel.getFacultiesResponse.observe(viewLifecycleOwner) {
+            when (it) {
+                is Resource.Success -> {
+                    val faculties = it.value.result.faculties
+                    faculties.forEachIndexed { index, facItem ->
+                        val faculty = Faculty(
+                            faculty_id = facItem.faculty_id,
+                            faculty_name = facItem.faculty_name
+                        )
+                        facList.add(faculty)
+
+                        facAdapter = FacultyAdapter(facList)
+                        binding.facultiesRv.adapter = facAdapter
+                    }
+                }
+                is Resource.Failure -> {
+                    Toast.makeText(
+                        requireContext(),
+                        if (it.isNetworkError){ "Network Error" }
+                        else { "Fail: ${it.errorMessage.toString()}" },
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                Resource.Loading -> {
+                }
+                else -> {
+                    Toast.makeText(
+                        requireContext(),
+                        "unknown error",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
+
+        binding.addFacultiesBtn.setOnClickListener {
             parentFragmentManager.beginTransaction().apply {
                 replace(R.id.frag_faculty_fl, AddFacultyFragment())
                 commit()

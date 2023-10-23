@@ -2,16 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/edit_group"
+    android:id="@+id/edit_discipline"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.ui.edudir.AddEdudirFragment">
+    tools:context=".admin.ui.discipline.AddDisciplineFragment">
 
     <TextView
-        android:id="@+id/edit_group_tv"
+        android:id="@+id/edit_discipline_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit Group"
+        android:text="Edit Discipline"
         android:textColor="#006BB4"
         android:textSize="30dp"
         android:textStyle="bold"
@@ -22,20 +22,20 @@
         app:layout_constraintVertical_bias="0.1" />
 
     <TextView
-        android:id="@+id/edit_group_name_tv"
+        android:id="@+id/edit_discipline_name_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Group Name"
-        android:textStyle="bold"
         android:layout_marginHorizontal="40dp"
-        app:layout_constraintVertical_bias="0.05"
+        android:text="Discipline Name"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_group_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_discipline_tv"
+        app:layout_constraintVertical_bias="0.05" />
 
     <EditText
-        android:id="@+id/edit_group_name"
+        android:id="@+id/edit_discipline_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
@@ -48,10 +48,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_group_name_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_discipline_name_tv" />
 
     <TextView
-        android:id="@+id/edit_group_edudir_tv"
+        android:id="@+id/edudir_discipline_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
@@ -60,11 +60,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_group_name"
+        app:layout_constraintTop_toBottomOf="@+id/edit_discipline_name"
         app:layout_constraintVertical_bias="0.05" />
 
     <Spinner
-        android:id="@+id/edit_group_edudir_spin"
+        android:id="@+id/edit_edudir_faculty_spin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
@@ -75,10 +75,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_group_edudir_tv"/>
+        app:layout_constraintTop_toBottomOf="@+id/edudir_discipline_tv"/>
 
     <Button
-        android:id="@+id/edit_group_save_button"
+        android:id="@+id/edit_discipline_save_button"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@drawable/back_blue"
@@ -86,13 +86,13 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/edit_group_delete_button"
+        app:layout_constraintEnd_toStartOf="@+id/edit_discipline_delete_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_group_edudir_spin"
+        app:layout_constraintTop_toBottomOf="@+id/edit_edudir_faculty_spin"
         app:layout_constraintVertical_bias="0.2" />
 
     <Button
-        android:id="@+id/edit_group_delete_button"
+        android:id="@+id/edit_discipline_delete_button"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@drawable/back_red"
@@ -100,9 +100,9 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/edit_group_save_button"
+        app:layout_constraintStart_toEndOf="@id/edit_discipline_save_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_group_edudir_spin"
+        app:layout_constraintTop_toBottomOf="@+id/edit_edudir_faculty_spin"
         app:layout_constraintVertical_bias="0.2"/>
 
 

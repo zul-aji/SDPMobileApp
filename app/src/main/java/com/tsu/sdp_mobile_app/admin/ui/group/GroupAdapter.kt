@@ -3,13 +3,11 @@ package com.tsu.sdp_mobile_app.admin.ui.group
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.tsu.sdp_mobile_app.admin.data.response.CourseworkItem
-import com.tsu.sdp_mobile_app.admin.data.response.FacultyItem
-import com.tsu.sdp_mobile_app.admin.data.response.GroupItem
+import com.tsu.sdp_mobile_app.admin.data.response.Group
 import com.tsu.sdp_mobile_app.databinding.RecyclerFgpBinding
 
 class GroupAdapter (
-    private var facList: List<GroupItem>
+    private var facList: List<Group>
 ) : RecyclerView.Adapter<GroupAdapter.GroupViewHolder>() {
 
     class GroupViewHolder (binding: RecyclerFgpBinding) :

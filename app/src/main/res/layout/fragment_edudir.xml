@@ -2,16 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/add_edudir"
+    android:id="@+id/edudir"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="admin.ui.faculty.FacultyFragment">
+    tools:context=".admin.ui.edudir.EdudirFragment">
 
     <TextView
-        android:id="@+id/faculties"
+        android:id="@+id/edudir_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Faculties"
+        android:text="Educational Direction"
         android:textColor="#006BB4"
         android:textSize="30dp"
         android:textStyle="bold"
@@ -22,29 +22,29 @@
         app:layout_constraintVertical_bias="0.1" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/faculties_rv"
+        android:id="@+id/edudir_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintVertical_bias="0.1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/faculties" />
+        app:layout_constraintTop_toBottomOf="@+id/edudir_tv" />
 
     <Button
-        android:id="@+id/add_faculties_btn"
+        android:id="@+id/add_edudir_btn"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_box_style"
-        android:drawableLeft="@drawable/plus_logo"
         android:padding="10dp"
         android:text="Add"
-        android:textAlignment="textEnd"
         android:textColor="@color/secondary_blue"
+        android:background="@drawable/rectangle_box_style"
+        android:drawableLeft="@drawable/plus_logo"
+        android:textAlignment="textEnd"
+        app:layout_constraintVertical_bias="0.1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/faculties_rv"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toBottomOf="@+id/edudir_rv"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

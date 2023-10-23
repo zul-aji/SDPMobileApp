@@ -3,11 +3,11 @@ package com.tsu.sdp_mobile_app.admin.ui.faculty
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.tsu.sdp_mobile_app.admin.data.response.FacultyItem
+import com.tsu.sdp_mobile_app.admin.data.response.Faculty
 import com.tsu.sdp_mobile_app.databinding.RecyclerFgpBinding
 
 class FacultyAdapter (
-    private var facList: List<FacultyItem>
+    private var facList: List<Faculty>
 ) : RecyclerView.Adapter<FacultyAdapter.FacultyViewHolder>() {
 
     class FacultyViewHolder (binding: RecyclerFgpBinding) :
@@ -23,6 +23,6 @@ class FacultyAdapter (
     override fun getItemCount(): Int = facList.size
 
     override fun onBindViewHolder(holder: FacultyViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.item.text = facList[position].faculty_name
     }
 }

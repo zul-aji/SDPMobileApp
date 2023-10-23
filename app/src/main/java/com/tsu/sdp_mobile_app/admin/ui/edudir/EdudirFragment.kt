@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.admin.ui.group
+package com.tsu.sdp_mobile_app.admin.ui.edudir
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,36 +7,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
-import com.tsu.sdp_mobile_app.admin.ui.faculty.AddFacultyFragment
-import com.tsu.sdp_mobile_app.databinding.FragmentGroupBinding
+import com.tsu.sdp_mobile_app.databinding.FragmentEdudirBinding
 
-class GroupFragment : Fragment() {
-    private lateinit var binding: FragmentGroupBinding
+class EdudirFragment : Fragment() {
+    private lateinit var binding: FragmentEdudirBinding
 
     companion object {
-        fun newInstance() = GroupFragment()
+        fun newInstance() = EdudirFragment()
     }
 
-    private lateinit var viewModel: GroupViewModel
+    private lateinit var viewModel: EdudirViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(GroupViewModel::class.java)
+        viewModel = ViewModelProvider(this)[EdudirViewModel::class.java]
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentGroupBinding.inflate(inflater, container, false)
+        binding = FragmentEdudirBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.addGroupsBtn.setOnClickListener {
+        binding.addEdudirBtn.setOnClickListener {
             parentFragmentManager.beginTransaction().apply {
-                replace(R.id.frag_group_fl, AddGroupFragment())
+                replace(R.id.frag_edudir_fl, AddEdudirFragment())
                 commit()
             }
         }

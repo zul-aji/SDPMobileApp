@@ -5,7 +5,7 @@
     android:id="@+id/add_edudir"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.ui.faculty.AddFacultyFragment">
+    tools:context=".admin.ui.edudir.AddEdudirFragment">
 
     <ImageView
         android:id="@+id/back_arrow"
@@ -24,7 +24,7 @@
         android:id="@+id/add_edudir_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Faculty"
+        android:text="Add Educational Direction"
         android:textColor="#006BB4"
         android:textSize="30dp"
         android:textStyle="bold"
@@ -38,14 +38,14 @@
         android:id="@+id/edudir_name_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Faculty Name"
-        android:textStyle="bold"
         android:layout_marginHorizontal="40dp"
-        app:layout_constraintVertical_bias="0.05"
+        android:text="Educational Direction Name"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_edudir_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/add_edudir_tv"
+        app:layout_constraintVertical_bias="0.05" />
 
     <EditText
         android:id="@+id/edit_edudir_name"
@@ -67,14 +67,14 @@
         android:id="@+id/edudir_director_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dean Name"
-        android:textStyle="bold"
         android:layout_marginHorizontal="40dp"
-        app:layout_constraintVertical_bias="0.05"
+        android:text="Educational Direction Director Name"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_edudir_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_edudir_name"
+        app:layout_constraintVertical_bias="0.05" />
 
     <EditText
         android:id="@+id/edit_edudir_director_name"
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edudir_director_tv" />
 
     <TextView
-        android:id="@+id/fac_email_tv"
+        android:id="@+id/prog_email_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Email"
@@ -106,7 +106,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edit_edudir_director_name" />
 
     <EditText
-        android:id="@+id/edit_fac_email"
+        android:id="@+id/edit_prog_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
@@ -119,10 +119,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fac_email_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/prog_email_tv" />
 
     <TextView
-        android:id="@+id/fac_phone_tv"
+        android:id="@+id/prog_phone_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Phone"
@@ -132,10 +132,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_fac_email" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_prog_email" />
 
     <EditText
-        android:id="@+id/edit_fac_phone"
+        android:id="@+id/prog_edit_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
@@ -148,10 +148,37 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fac_phone_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/prog_phone_tv" />
+
+    <TextView
+        android:id="@+id/prog_faculty_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Faculty"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="40dp"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prog_edit_phone" />
+
+    <Spinner
+        android:id="@+id/prog_faculty_spin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:background="@drawable/rectangle_box_style"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prog_faculty_tv"/>
 
     <Button
-        android:id="@+id/add_add_fac_button"
+        android:id="@+id/add_add_edudir_button"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@drawable/back_blue"
@@ -162,7 +189,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_fac_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/prog_faculty_spin"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

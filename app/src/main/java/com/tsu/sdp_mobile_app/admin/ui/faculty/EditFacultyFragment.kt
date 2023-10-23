@@ -14,19 +14,13 @@ class EditFacultyFragment : Fragment() {
         fun newInstance() = EditFacultyFragment()
     }
 
-    private lateinit var viewModel: EditFacultyViewModel
+    private lateinit var viewModel: FacultyViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_edit_faculty, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(EditFacultyViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

@@ -32,19 +32,19 @@
         app:layout_constraintTop_toBottomOf="@+id/groups" />
 
     <Button
-        android:id="@+id/add_groups"
-        android:layout_width="140dp"
+        android:id="@+id/add_groups_btn"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="Add Group"
-        android:textColor="@color/secondary_blue"
         android:background="@drawable/rectangle_box_style"
         android:drawableLeft="@drawable/plus_logo"
+        android:padding="10dp"
+        android:text="Add"
         android:textAlignment="textEnd"
-        app:layout_constraintVertical_bias="0.1"
+        android:textColor="@color/secondary_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/groups_rv"/>
+        app:layout_constraintTop_toBottomOf="@+id/groups_rv"
+        app:layout_constraintVertical_bias="0.1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

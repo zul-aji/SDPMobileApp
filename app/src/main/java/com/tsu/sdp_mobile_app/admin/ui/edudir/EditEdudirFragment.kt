@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.admin.ui.group
+package com.tsu.sdp_mobile_app.admin.ui.edudir
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,19 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
 
-class EditGroupFragment : Fragment() {
+class EditEdudirFragment : Fragment() {
 
     companion object {
-        fun newInstance() = EditGroupFragment()
+        fun newInstance() = EditEdudirFragment()
     }
 
-    private lateinit var viewModel: GroupViewModel
+    private lateinit var viewModel: EdudirViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_edit_group, container, false)
+        return inflater.inflate(R.layout.fragment_edit_edudir, container, false)
     }
 
 }

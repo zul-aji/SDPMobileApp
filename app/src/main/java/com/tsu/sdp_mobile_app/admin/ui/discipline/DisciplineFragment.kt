@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.admin.ui.group
+package com.tsu.sdp_mobile_app.admin.ui.discipline
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,36 +7,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
-import com.tsu.sdp_mobile_app.admin.ui.faculty.AddFacultyFragment
-import com.tsu.sdp_mobile_app.databinding.FragmentGroupBinding
+import com.tsu.sdp_mobile_app.databinding.FragmentDisciplineBinding
 
-class GroupFragment : Fragment() {
-    private lateinit var binding: FragmentGroupBinding
+class DisciplineFragment : Fragment() {
+    private lateinit var binding: FragmentDisciplineBinding
 
     companion object {
-        fun newInstance() = GroupFragment()
+        fun newInstance() = DisciplineFragment()
     }
 
-    private lateinit var viewModel: GroupViewModel
+    private lateinit var viewModel: DisciplineViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(GroupViewModel::class.java)
+        viewModel = ViewModelProvider(this)[DisciplineViewModel::class.java]
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentGroupBinding.inflate(inflater, container, false)
+        binding = FragmentDisciplineBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.addGroupsBtn.setOnClickListener {
+        binding.addDisciplineBtn.setOnClickListener {
             parentFragmentManager.beginTransaction().apply {
-                replace(R.id.frag_group_fl, AddGroupFragment())
+                replace(R.id.frag_discipline_fl, AddDisciplineFragment())
                 commit()
             }
         }

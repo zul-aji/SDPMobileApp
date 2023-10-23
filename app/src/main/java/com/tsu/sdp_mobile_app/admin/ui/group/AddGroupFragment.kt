@@ -1,15 +1,12 @@
 package com.tsu.sdp_mobile_app.admin.ui.group
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
-import com.tsu.sdp_mobile_app.admin.ui.programme.ProgrammeFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentAddGroupBinding
-import com.tsu.sdp_mobile_app.databinding.FragmentAddProgrammeBinding
 
 class AddGroupFragment : Fragment() {
     private lateinit var binding: FragmentAddGroupBinding
@@ -18,7 +15,7 @@ class AddGroupFragment : Fragment() {
         fun newInstance() = AddGroupFragment()
     }
 
-    private lateinit var viewModel: AddGroupViewModel
+    private lateinit var viewModel: GroupViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

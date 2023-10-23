@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.tsu.sdp_mobile_app.admin.CourseworkActivity
+import com.tsu.sdp_mobile_app.admin.DisciplineActivity
 import com.tsu.sdp_mobile_app.admin.FacultyActivity
 import com.tsu.sdp_mobile_app.admin.GroupActivity
-import com.tsu.sdp_mobile_app.admin.ProgrammeActivity
+import com.tsu.sdp_mobile_app.admin.EdudirActivity
 import com.tsu.sdp_mobile_app.databinding.FragmentManageBinding
 
 class ManageFragment : Fragment() {
@@ -26,8 +26,8 @@ class ManageFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val manageViewModel =
-            ViewModelProvider(this)[ManageViewModel::class.java]
+//        val manageViewModel =
+//            ViewModelProvider(this)[ManageViewModel::class.java]
 
         _binding = FragmentManageBinding.inflate(inflater, container, false)
         return binding.root
@@ -47,12 +47,12 @@ class ManageFragment : Fragment() {
         }
 
         binding.directionButton.setOnClickListener {
-            val nextPage = Intent(context, ProgrammeActivity::class.java)
+            val nextPage = Intent(context, EdudirActivity::class.java)
             startActivity(nextPage)
         }
 
         binding.disciplinesButton.setOnClickListener {
-            val nextPage = Intent(context, CourseworkActivity::class.java)
+            val nextPage = Intent(context, DisciplineActivity::class.java)
             startActivity(nextPage)
         }
     }

@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/faculty"
+    android:id="@+id/add_edudir"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.ui.programme.AddProgrammeFragment">
+    tools:context=".admin.ui.edudir.AddEdudirFragment">
 
     <ImageView
         android:id="@+id/back_arrow"
@@ -64,17 +64,17 @@
         app:layout_constraintTop_toBottomOf="@+id/group_name_tv" />
 
     <TextView
-        android:id="@+id/group_programme_tv"
+        android:id="@+id/group_edudir_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
-        android:text="Programme"
-        app:layout_constraintVertical_bias="0.05"
+        android:text="Educational Direction"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_group_name"/>
+        app:layout_constraintTop_toBottomOf="@+id/edit_group_name"
+        app:layout_constraintVertical_bias="0.05" />
 
     <Spinner
         android:id="@+id/group_faculty_spin"
@@ -88,7 +88,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/group_programme_tv"/>
+        app:layout_constraintTop_toBottomOf="@+id/group_edudir_tv"/>
 
     <Button
         android:id="@+id/add_add_group_button"
