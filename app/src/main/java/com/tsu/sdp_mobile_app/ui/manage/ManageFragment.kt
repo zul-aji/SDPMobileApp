@@ -11,6 +11,7 @@ import com.tsu.sdp_mobile_app.admin.DisciplineActivity
 import com.tsu.sdp_mobile_app.admin.FacultyActivity
 import com.tsu.sdp_mobile_app.admin.GroupActivity
 import com.tsu.sdp_mobile_app.admin.EdudirActivity
+import com.tsu.sdp_mobile_app.admin.ui.startNewActivity
 import com.tsu.sdp_mobile_app.databinding.FragmentManageBinding
 
 class ManageFragment : Fragment() {
@@ -37,23 +38,19 @@ class ManageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.facultyButton.setOnClickListener {
-            val nextPage = Intent(context, FacultyActivity::class.java)
-            startActivity(nextPage)
+            requireActivity().startNewActivity(FacultyActivity::class.java)
         }
 
         binding.groupsButton.setOnClickListener {
-            val nextPage = Intent(context, GroupActivity::class.java)
-            startActivity(nextPage)
+            requireActivity().startNewActivity(GroupActivity::class.java)
         }
 
         binding.directionButton.setOnClickListener {
-            val nextPage = Intent(context, EdudirActivity::class.java)
-            startActivity(nextPage)
+            requireActivity().startNewActivity(EdudirActivity::class.java)
         }
 
         binding.disciplinesButton.setOnClickListener {
-            val nextPage = Intent(context, DisciplineActivity::class.java)
-            startActivity(nextPage)
+            requireActivity().startNewActivity(DisciplineActivity::class.java)
         }
     }
 

@@ -7,7 +7,7 @@ import com.tsu.sdp_mobile_app.admin.data.response.Group
 import com.tsu.sdp_mobile_app.databinding.RecyclerFgpBinding
 
 class GroupAdapter (
-    private var facList: List<Group>
+    private var groupList: List<Group>
 ) : RecyclerView.Adapter<GroupAdapter.GroupViewHolder>() {
 
     class GroupViewHolder (binding: RecyclerFgpBinding) :
@@ -20,9 +20,9 @@ class GroupAdapter (
         return GroupViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = facList.size
+    override fun getItemCount(): Int = groupList.size
 
     override fun onBindViewHolder(holder: GroupViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.item.text = groupList[position].group_name
     }
 }

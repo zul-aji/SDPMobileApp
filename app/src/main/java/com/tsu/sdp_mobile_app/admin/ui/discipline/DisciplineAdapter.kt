@@ -4,25 +4,26 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.tsu.sdp_mobile_app.admin.data.response.Discipline
+import com.tsu.sdp_mobile_app.databinding.RecyclerDisBinding
 import com.tsu.sdp_mobile_app.databinding.RecyclerFgpBinding
 
 class DisciplineAdapter (
-    private var facList: List<Discipline>
-) : RecyclerView.Adapter<DisciplineAdapter.CourseworkViewHolder>() {
+    private var dissList: List<Discipline>
+) : RecyclerView.Adapter<DisciplineAdapter.DisciplineViewHolder>() {
 
-    class CourseworkViewHolder (binding: RecyclerFgpBinding) :
+    class DisciplineViewHolder (binding: RecyclerDisBinding) :
             RecyclerView.ViewHolder(binding.root) {
                 val item = binding.item
             }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseworkViewHolder {
-        val binding = RecyclerFgpBinding.inflate(LayoutInflater.from(parent.context), null, false)
-        return CourseworkViewHolder(binding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DisciplineViewHolder {
+        val binding = RecyclerDisBinding.inflate(LayoutInflater.from(parent.context), null, false)
+        return DisciplineViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = facList.size
+    override fun getItemCount(): Int = dissList.size
 
-    override fun onBindViewHolder(holder: CourseworkViewHolder, position: Int) {
-        TODO("Not yet implemented")
+    override fun onBindViewHolder(holder: DisciplineViewHolder, position: Int) {
+        holder.item.text = dissList[position].discipline_name
     }
 }

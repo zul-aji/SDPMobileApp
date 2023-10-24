@@ -6,34 +6,71 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.tsu.sdp_mobile_app.R
-import com.tsu.sdp_mobile_app.admin.ui.faculty.AddFacultyFragment
+import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
+import com.tsu.sdp_mobile_app.admin.data.network.Resource
+import com.tsu.sdp_mobile_app.admin.data.repository.GroupRepo
+import com.tsu.sdp_mobile_app.admin.data.response.Group
+import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentGroupBinding
 
-class GroupFragment : Fragment() {
-    private lateinit var binding: FragmentGroupBinding
+class GroupFragment :
+    BaseFragment<GroupViewModel, FragmentGroupBinding, GroupRepo>() {
 
-    companion object {
-        fun newInstance() = GroupFragment()
-    }
+    private lateinit var groupAdapter: GroupAdapter
+    private val groupsList = ArrayList<Group>()
 
-    private lateinit var viewModel: GroupViewModel
+    override fun getViewModel() = GroupViewModel::class.java
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(GroupViewModel::class.java)
-    }
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ) = FragmentGroupBinding.inflate(inflater, container, false)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentGroupBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    override fun getFragmentRepository() = GroupRepo(dataSource.buildAPI(requireContext(), APIRequest::class.java))
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.groupsRv.layoutManager = LinearLayoutManager(activity)
+
+        viewModel.getGroups()
+        viewModel.getGroupsResponse.observe(viewLifecycleOwner) {
+            when (it) {
+                is Resource.Success -> {
+                    val groups = it.value.result.groups
+                    groups.forEachIndexed { _, groupItem ->
+                        val group = Group(
+                            group_id = groupItem.group_id,
+                            direction_id = groupItem.direction_id,
+                            group_name = groupItem.group_name
+                        )
+                        groupsList.add(group)
+
+                        groupAdapter = GroupAdapter(groupsList)
+                        binding.groupsRv.adapter = groupAdapter
+                    }
+                }
+                is Resource.Failure -> {
+                    Toast.makeText(
+                        requireContext(),
+                        if (it.isNetworkError){ "Network Error" }
+                        else { "Fail: ${it.errorMessage.toString()}" },
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                else -> {
+                    Toast.makeText(
+                        requireContext(),
+                        "unknown error",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
+
         binding.addGroupsBtn.setOnClickListener {
             parentFragmentManager.beginTransaction().apply {
                 replace(R.id.frag_group_fl, AddGroupFragment())

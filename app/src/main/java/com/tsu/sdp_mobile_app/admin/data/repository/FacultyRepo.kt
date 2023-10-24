@@ -10,67 +10,29 @@ class FacultyRepo(
     ) = safeApiCall {
         api.getFaculties()
     }
-//    suspend fun getUser(
-//        token: String
-//    ) = safeApiCall {
-//        api.getUser(token)
-//    }
-//
-//    suspend fun getGallery(
-//        page: Int
-//    ) = safeApiCall {
-//        api.getGallery(page)
-//    }
-//
-//    suspend fun getFavorite(
-//        token: String
-//    ) = safeApiCall {
-//        api.getFavorite(token)
-//    }
-//
-//    suspend fun addFavorite(
-//        token: String,
-//        id: String
-//    ) = safeApiCall {
-//        api.addFavorite(token, id)
-//    }
-//
-//    suspend fun removeFavorite(
-//        token: String,
-//        id: String
-//    ) = safeApiCall {
-//        api.removeFavorite(token, id)
-//    }
-//
-//    suspend fun getMovieDetails(
-//        id: String
-//    ) = safeApiCall {
-//        api.getMovieDetails(id)
-//    }
-//
-//    suspend fun addReview(
-//        token: String,
-//        movieId: String,
-//        review: ReviewRequest
-//    ) = safeApiCall {
-//        api.addReview(token, movieId, review)
-//    }
-//
-//    suspend fun updateReview(
-//        token: String,
-//        movieId: String,
-//        id: String,
-//        review: ReviewRequest
-//    ) = safeApiCall {
-//        api.updateReview(token, movieId, id, review)
-//    }
-//
-//    suspend fun deleteReview(
-//        token: String,
-//        movieId: String,
-//        id: String
-//    ) = safeApiCall {
-//        api.deleteReview(token, movieId, id)
-//    }
 
+    suspend fun getFaculty(
+        id: String
+    ) = safeApiCall {
+        api.getFaculty(id)
+    }
+
+    suspend fun createFaculty(
+        name: String
+    ) = safeApiCall {
+        api.getFaculty(name)
+    }
+
+    suspend fun updateFaculty(
+        id: String,
+        name: String
+    ) = safeApiCall {
+        api.updateFaculty(id, name)
+    }
+
+    suspend fun deleteFaculty(
+        id: String
+    ) = safeApiCall {
+        api.deleteFaculty(id)
+    }
 }

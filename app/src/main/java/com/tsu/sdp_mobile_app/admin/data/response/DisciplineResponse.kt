@@ -1,14 +1,25 @@
 package com.tsu.sdp_mobile_app.admin.data.response
 
-data class DisciplineResponse(
+data class DisciplinesResponse(
     val statusCode: Int,
     val isSuccess: Boolean,
     val errorMessages: List<String>?, // Assuming errorMessages can be a list of strings
+    val result: DissResult
+)
+
+data class DissResult(
+    val disciplines: List<Discipline>
+)
+
+data class DisciplineResponse(
+    val statusCode: Int,
+    val isSuccess: Boolean,
+    val errorMessages: List<String>?,
     val result: DisResult
 )
 
 data class DisResult(
-    val disciplines: List<Discipline>
+    val discipline: Discipline
 )
 
 data class Discipline(
@@ -19,7 +30,7 @@ data class Discipline(
     val year: Int,
     val grade_id: String,
     val is_online: Boolean,
-    val building: String?, // Assuming building and room can be nullable
+    val building: String?,
     val room: String?
 )
 

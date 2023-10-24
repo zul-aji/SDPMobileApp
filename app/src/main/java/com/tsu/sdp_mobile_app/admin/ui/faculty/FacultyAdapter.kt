@@ -7,7 +7,7 @@ import com.tsu.sdp_mobile_app.admin.data.response.Faculty
 import com.tsu.sdp_mobile_app.databinding.RecyclerFgpBinding
 
 class FacultyAdapter (
-    private var facList: List<Faculty>
+    private var facsList: List<Faculty>
 ) : RecyclerView.Adapter<FacultyAdapter.FacultyViewHolder>() {
 
     class FacultyViewHolder (binding: RecyclerFgpBinding) :
@@ -20,9 +20,9 @@ class FacultyAdapter (
         return FacultyViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = facList.size
+    override fun getItemCount(): Int = facsList.size
 
     override fun onBindViewHolder(holder: FacultyViewHolder, position: Int) {
-        holder.item.text = facList[position].faculty_name
+        holder.item.text = facsList[position].faculty_name
     }
 }

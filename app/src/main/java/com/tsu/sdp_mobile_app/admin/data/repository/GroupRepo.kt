@@ -1,76 +1,45 @@
 package com.tsu.sdp_mobile_app.admin.data.repository
 
 import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
+import com.tsu.sdp_mobile_app.admin.data.response.Group
 
 class GroupRepo(
     private val api: APIRequest
 ) : BaseRepo(){
 
-    suspend fun getGroups(
+    suspend fun getGroups (
     ) = safeApiCall {
         api.getGroups()
     }
-//    suspend fun getUser(
-//        token: String
-//    ) = safeApiCall {
-//        api.getUser(token)
-//    }
-//
-//    suspend fun getGallery(
-//        page: Int
-//    ) = safeApiCall {
-//        api.getGallery(page)
-//    }
-//
-//    suspend fun getFavorite(
-//        token: String
-//    ) = safeApiCall {
-//        api.getFavorite(token)
-//    }
-//
-//    suspend fun addFavorite(
-//        token: String,
-//        id: String
-//    ) = safeApiCall {
-//        api.addFavorite(token, id)
-//    }
-//
-//    suspend fun removeFavorite(
-//        token: String,
-//        id: String
-//    ) = safeApiCall {
-//        api.removeFavorite(token, id)
-//    }
-//
-//    suspend fun getMovieDetails(
-//        id: String
-//    ) = safeApiCall {
-//        api.getMovieDetails(id)
-//    }
-//
-//    suspend fun addReview(
-//        token: String,
-//        movieId: String,
-//        review: ReviewRequest
-//    ) = safeApiCall {
-//        api.addReview(token, movieId, review)
-//    }
-//
-//    suspend fun updateReview(
-//        token: String,
-//        movieId: String,
-//        id: String,
-//        review: ReviewRequest
-//    ) = safeApiCall {
-//        api.updateReview(token, movieId, id, review)
-//    }
-//
-//    suspend fun deleteReview(
-//        token: String,
-//        movieId: String,
-//        id: String
-//    ) = safeApiCall {
-//        api.deleteReview(token, movieId, id)
-//    }
 
+    suspend fun getGroup (
+        id: String
+    ) = safeApiCall {
+        api.getGroup(id)
+    }
+
+    suspend fun getGroupByName (
+        name: String
+    ) = safeApiCall {
+        api.getGroupByName(name)
+    }
+
+    suspend fun createGroup (
+        group: Group
+    ) = safeApiCall {
+        api.createGroup(group)
+    }
+
+    suspend fun updateGroup (
+        id: String,
+        group: Group
+    ) = safeApiCall {
+        api.updateGroup(id, group)
+    }
+
+    suspend fun deleteGroup (
+        id: String
+    ) = safeApiCall {
+        api.deleteGroup(id)
+    }
 }

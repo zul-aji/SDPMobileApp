@@ -1,5 +1,16 @@
 package com.tsu.sdp_mobile_app.admin.data.response
 
+data class GroupsResponse(
+    val statusCode: Int,
+    val isSuccess: Boolean,
+    val errorMessages: List<String>?, // Assuming errorMessages can be a list of strings
+    val result: GroupsResult
+)
+
+data class GroupsResult(
+    val groups: List<Group>
+)
+
 data class GroupResponse(
     val statusCode: Int,
     val isSuccess: Boolean,
@@ -8,7 +19,7 @@ data class GroupResponse(
 )
 
 data class GroupResult(
-    val groups: List<Group>
+    val group: Group
 )
 
 data class Group(
@@ -16,4 +27,3 @@ data class Group(
     val direction_id: String,
     val group_name: String
 )
-

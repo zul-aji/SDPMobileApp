@@ -7,7 +7,7 @@ import com.tsu.sdp_mobile_app.admin.data.response.Direction
 import com.tsu.sdp_mobile_app.databinding.RecyclerFgpBinding
 
 class EdudirAdapter (
-    private var facList: List<Direction>
+    private var dirList: List<Direction>
 ) : RecyclerView.Adapter<EdudirAdapter.EdudirViewHolder>() {
 
     class EdudirViewHolder (binding: RecyclerFgpBinding) :
@@ -20,9 +20,9 @@ class EdudirAdapter (
         return EdudirViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = facList.size
+    override fun getItemCount(): Int = dirList.size
 
     override fun onBindViewHolder(holder: EdudirViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.item.text = dirList[position].direction_name
     }
 }

@@ -1,14 +1,25 @@
 package com.tsu.sdp_mobile_app.admin.data.response
 
+data class FacultiesResponse(
+    val statusCode: Int,
+    val isSuccess: Boolean,
+    val errorMessages: List<String>?,
+    val result: FacsResult
+)
+
+data class FacsResult(
+    val faculties: List<Faculty>
+)
+
 data class FacultyResponse(
     val statusCode: Int,
     val isSuccess: Boolean,
-    val errorMessages: List<String>?, // Use a more specific type if necessary
+    val errorMessages: List<String>?,
     val result: FacResult
 )
 
 data class FacResult(
-    val faculties: List<Faculty>
+    val faculty: Faculty
 )
 
 data class Faculty(

@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.tsu.sdp_mobile_app.R
@@ -18,6 +19,7 @@ import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.FacultyRepo
 import com.tsu.sdp_mobile_app.admin.data.response.Faculty
 import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
+import com.tsu.sdp_mobile_app.admin.ui.visible
 import com.tsu.sdp_mobile_app.databinding.FragmentFacultyBinding
 import java.util.zip.Inflater
 
@@ -25,8 +27,8 @@ class FacultyFragment :
     BaseFragment<FacultyViewModel, FragmentFacultyBinding, FacultyRepo>() {
 
     private lateinit var facAdapter: FacultyAdapter
-    private lateinit var facultyName: String
-    private val facList = ArrayList<Faculty>()
+    private val facsList = ArrayList<Faculty>()
+
     override fun getViewModel() = FacultyViewModel::class.java
 
     override fun getFragmentBinding(
@@ -41,19 +43,19 @@ class FacultyFragment :
 
         binding.facultiesRv.layoutManager = LinearLayoutManager(activity)
 
-        viewModel.getFaculty()
+        viewModel.getFaculties()
         viewModel.getFacultiesResponse.observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Success -> {
                     val faculties = it.value.result.faculties
-                    faculties.forEachIndexed { index, facItem ->
+                    faculties.forEachIndexed { _, facItem ->
                         val faculty = Faculty(
                             faculty_id = facItem.faculty_id,
                             faculty_name = facItem.faculty_name
                         )
-                        facList.add(faculty)
+                        facsList.add(faculty)
 
-                        facAdapter = FacultyAdapter(facList)
+                        facAdapter = FacultyAdapter(facsList)
                         binding.facultiesRv.adapter = facAdapter
                     }
                 }
@@ -64,8 +66,6 @@ class FacultyFragment :
                         else { "Fail: ${it.errorMessage.toString()}" },
                         Toast.LENGTH_SHORT
                     ).show()
-                }
-                Resource.Loading -> {
                 }
                 else -> {
                     Toast.makeText(
@@ -84,5 +84,4 @@ class FacultyFragment :
             }
         }
     }
-
 }
