@@ -22,5 +22,10 @@ class RegisterActivity : AppCompatActivity() {
             val nextPage = Intent(this, MainActivity::class.java)
             startActivity(nextPage)
         }
+
+        binding.tvCancel.setOnClickListener {
+            val nextPage = Intent(this, LoginActivity::class.java)
+            startActivity(nextPage)
+        }
     }
 }
