@@ -42,4 +42,9 @@ class GroupRepo(
     ) = safeApiCall {
         api.deleteGroup(id)
     }
+
+    suspend fun getDirections(
+    ) = safeApiCall {
+        api.getDirections()
+    }
 }

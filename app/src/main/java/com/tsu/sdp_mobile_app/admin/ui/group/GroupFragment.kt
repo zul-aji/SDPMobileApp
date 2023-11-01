@@ -1,5 +1,6 @@
 package com.tsu.sdp_mobile_app.admin.ui.group
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,16 +9,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.tsu.sdp_mobile_app.MainActivity
 import com.tsu.sdp_mobile_app.R
 import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
 import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.GroupRepo
 import com.tsu.sdp_mobile_app.admin.data.response.Group
 import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
+import com.tsu.sdp_mobile_app.admin.ui.edudir.EditEdudirFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentGroupBinding
 
 class GroupFragment :
-    BaseFragment<GroupViewModel, FragmentGroupBinding, GroupRepo>() {
+    BaseFragment<GroupViewModel, FragmentGroupBinding, GroupRepo>(), GroupAdapter.GoToEditFragment {
 
     private lateinit var groupAdapter: GroupAdapter
     private val groupsList = ArrayList<Group>()
@@ -36,6 +39,13 @@ class GroupFragment :
 
         binding.groupsRv.layoutManager = LinearLayoutManager(activity)
 
+        binding.backArrow.setOnClickListener{
+            val intent = Intent(context, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+
         viewModel.getGroups()
         viewModel.getGroupsResponse.observe(viewLifecycleOwner) {
             when (it) {
@@ -49,7 +59,7 @@ class GroupFragment :
                         )
                         groupsList.add(group)
 
-                        groupAdapter = GroupAdapter(groupsList)
+                        groupAdapter = GroupAdapter(groupsList, this)
                         binding.groupsRv.adapter = groupAdapter
                     }
                 }
@@ -76,6 +86,13 @@ class GroupFragment :
                 replace(R.id.frag_group_fl, AddGroupFragment())
                 commit()
             }
+        }
+    }
+
+    override fun goToEditFragment(groupId: String, dirId: String) {
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.frag_group_fl, EditGroupFragment(groupId, dirId))
+            commit()
         }
     }
 

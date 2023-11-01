@@ -7,6 +7,11 @@ class DirectionRepo(
     private val api: APIRequest
 ) : BaseRepo(){
 
+    suspend fun getFaculties(
+    ) = safeApiCall {
+        api.getFaculties()
+    }
+
     suspend fun getDirections(
     ) = safeApiCall {
         api.getDirections()

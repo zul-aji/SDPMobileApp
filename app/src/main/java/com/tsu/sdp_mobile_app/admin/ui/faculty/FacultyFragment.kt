@@ -1,30 +1,23 @@
 package com.tsu.sdp_mobile_app.admin.ui.faculty
 
 import android.content.Intent
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.view.Gravity
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
+import com.tsu.sdp_mobile_app.MainActivity
 import com.tsu.sdp_mobile_app.R
-import com.tsu.sdp_mobile_app.admin.GroupActivity
 import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
 import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.FacultyRepo
 import com.tsu.sdp_mobile_app.admin.data.response.Faculty
 import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
-import com.tsu.sdp_mobile_app.admin.ui.visible
 import com.tsu.sdp_mobile_app.databinding.FragmentFacultyBinding
-import java.util.zip.Inflater
 
 class FacultyFragment :
-    BaseFragment<FacultyViewModel, FragmentFacultyBinding, FacultyRepo>() {
+    BaseFragment<FacultyViewModel, FragmentFacultyBinding, FacultyRepo>(), FacultyAdapter.GoToEditFragment {
 
     private lateinit var facAdapter: FacultyAdapter
     private val facsList = ArrayList<Faculty>()
@@ -43,6 +36,13 @@ class FacultyFragment :
 
         binding.facultiesRv.layoutManager = LinearLayoutManager(activity)
 
+        binding.backArrow.setOnClickListener{
+            val intent = Intent(context, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+
         viewModel.getFaculties()
         viewModel.getFacultiesResponse.observe(viewLifecycleOwner) {
             when (it) {
@@ -55,7 +55,7 @@ class FacultyFragment :
                         )
                         facsList.add(faculty)
 
-                        facAdapter = FacultyAdapter(facsList)
+                        facAdapter = FacultyAdapter(facsList, this)
                         binding.facultiesRv.adapter = facAdapter
                     }
                 }
@@ -82,6 +82,13 @@ class FacultyFragment :
                 replace(R.id.frag_faculty_fl, AddFacultyFragment())
                 commit()
             }
+        }
+    }
+
+    override fun goToEditFragment(facultyId: String) {
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.frag_faculty_fl, EditFacultyFragment(facultyId))
+            commit()
         }
     }
 }

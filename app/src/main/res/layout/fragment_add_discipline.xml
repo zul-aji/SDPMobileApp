@@ -32,10 +32,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <TextView
-        android:id="@+id/discipline_name_tv"
+        android:id="@+id/add_discipline_name_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
@@ -48,7 +48,7 @@
         app:layout_constraintVertical_bias="0.05" />
 
     <EditText
-        android:id="@+id/edit_discipline_name"
+        android:id="@+id/add_discipline_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
@@ -61,48 +61,182 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/discipline_name_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_name_tv" />
 
     <TextView
-        android:id="@+id/edudir_coursework_tv"
+        android:id="@+id/add_discipline_desc_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
-        android:text="Educational Direction"
+        android:text="Description"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_discipline_name"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_name"
+        app:layout_constraintVertical_bias="0.03" />
 
-    <Spinner
-        android:id="@+id/edudir_discipline_spin"
+    <EditText
+        android:id="@+id/add_discipline_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
+        android:padding="6dp"
+        android:textSize="20dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:lines="2"
         android:background="@drawable/rectangle_box_style"
-        android:paddingHorizontal="6dp"
-        android:paddingVertical="10dp"
         app:layout_constraintVertical_bias="0.01"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edudir_coursework_tv"/>
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_desc_tv" />
+
+    <TextView
+        android:id="@+id/add_discipline_liter_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:text="Literature"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_desc"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <EditText
+        android:id="@+id/add_discipline_liter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:padding="6dp"
+        android:textSize="20dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:lines="2"
+        android:background="@drawable/rectangle_box_style"
+        app:layout_constraintVertical_bias="0.01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_liter_tv" />
+
+    <TextView
+        android:id="@+id/add_discipline_year_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:text="Year"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_liter"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <EditText
+        android:id="@+id/add_discipline_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:padding="6dp"
+        android:textSize="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:background="@drawable/rectangle_box_style"
+        app:layout_constraintVertical_bias="0.01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_year_tv" />
+
+    <TextView
+        android:id="@+id/add_discipline_build_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:text="Building"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_year"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <EditText
+        android:id="@+id/add_discipline_build"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:padding="6dp"
+        android:textSize="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:background="@drawable/rectangle_box_style"
+        app:layout_constraintVertical_bias="0.01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_build_tv" />
+
+    <TextView
+        android:id="@+id/add_discipline_room_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:text="Room"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_build"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <EditText
+        android:id="@+id/add_discipline_room"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:padding="6dp"
+        android:textSize="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:background="@drawable/rectangle_box_style"
+        app:layout_constraintVertical_bias="0.01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_room_tv" />
+
+    <CheckBox
+        android:id="@+id/add_discipline_online_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="35dp"
+        android:text="Online Format"
+        app:layout_constraintVertical_bias="0.07"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_room" />
 
     <Button
-        android:id="@+id/add_add_discipline_button"
+        android:id="@+id/add_discipline_add_button"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@drawable/back_blue"
         android:text="Add"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintVertical_bias="0.2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edudir_discipline_spin"/>
+        app:layout_constraintTop_toBottomOf="@+id/add_discipline_online_box"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

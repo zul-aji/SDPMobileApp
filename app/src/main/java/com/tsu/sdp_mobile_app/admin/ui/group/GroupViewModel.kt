@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.GroupRepo
+import com.tsu.sdp_mobile_app.admin.data.response.DirectionsResponse
 import com.tsu.sdp_mobile_app.admin.data.response.Group
 import com.tsu.sdp_mobile_app.admin.data.response.GroupResponse
 import com.tsu.sdp_mobile_app.admin.data.response.GroupsResponse
@@ -21,6 +22,10 @@ class GroupViewModel(
     private val _getGroup : MutableLiveData<Resource<GroupResponse>> = MutableLiveData()
     val getGroupResponse: LiveData<Resource<GroupResponse>>
         get() = _getGroup
+
+    private val _getDirections : MutableLiveData<Resource<DirectionsResponse>> = MutableLiveData()
+    val getDirectionsResponse: LiveData<Resource<DirectionsResponse>>
+        get() = _getDirections
 
     fun getGroups (
     ) = viewModelScope.launch {
@@ -56,5 +61,10 @@ class GroupViewModel(
         id: String
     ) = viewModelScope.launch {
         _getGroup.value = repo.deleteGroup(id)
+    }
+
+    fun getDirections (
+    ) = viewModelScope.launch {
+        _getDirections.value = repo.getDirections()
     }
 }

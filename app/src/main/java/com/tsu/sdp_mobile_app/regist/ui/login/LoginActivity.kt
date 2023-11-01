@@ -1,8 +1,10 @@
 package com.tsu.sdp_mobile_app.regist.ui.login
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.tsu.sdp_mobile_app.API.Request.LoginRequest
+import com.tsu.sdp_mobile_app.MainActivity
 import com.tsu.sdp_mobile_app.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -19,23 +21,26 @@ class LoginActivity : AppCompatActivity() {
             val username = binding.edtEmail.text.toString()
             val password = binding.edtPassword.text.toString()
 
-            if (username.isEmpty()) {
-                val binuser = binding.edtEmail
-                binuser.error = "Username required"  // Fixed the error message
-                binuser.requestFocus()
-                return@setOnClickListener
-            }
-
-            if (password.isEmpty()) {  // Changed to 'password' check
-                val binpass = binding.edtPassword
-                binpass.error = "Password required"  // Fixed the error message
-                binpass.requestFocus()
-                return@setOnClickListener
-            }
+//            if (username.isEmpty()) {
+//                val binuser = binding.edtEmail
+//                binuser.error = "Username required"  // Fixed the error message
+//                binuser.requestFocus()
+//                return@setOnClickListener
+//            }
+//
+//            if (password.isEmpty()) {  // Changed to 'password' check
+//                val binpass = binding.edtPassword
+//                binpass.error = "Password required"  // Fixed the error message
+//                binpass.requestFocus()
+//                return@setOnClickListener
+//            }
 
             val body = LoginRequest(username, password)
 
             viewModel.login(body)  // Pass 'body' as a parameter to the login function
+
+            val nextPage = Intent(this, MainActivity::class.java)
+            startActivity(nextPage)
         }
     }
 }

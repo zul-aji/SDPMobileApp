@@ -1,25 +1,23 @@
 package com.tsu.sdp_mobile_app.admin.ui.edudir
 
-import androidx.lifecycle.ViewModelProvider
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.tsu.sdp_mobile_app.MainActivity
 import com.tsu.sdp_mobile_app.R
 import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
 import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.DirectionRepo
 import com.tsu.sdp_mobile_app.admin.data.response.Direction
-import com.tsu.sdp_mobile_app.admin.data.response.Faculty
 import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
-import com.tsu.sdp_mobile_app.admin.ui.faculty.FacultyAdapter
 import com.tsu.sdp_mobile_app.databinding.FragmentEdudirBinding
 
 class EdudirFragment :
-    BaseFragment<EdudirViewModel, FragmentEdudirBinding, DirectionRepo>() {
+    BaseFragment<EdudirViewModel, FragmentEdudirBinding, DirectionRepo>(), EdudirAdapter.GoToEditFragment {
 
     private lateinit var dirAdapter: EdudirAdapter
     private val dirsList = ArrayList<Direction>()
@@ -38,6 +36,13 @@ class EdudirFragment :
 
         binding.edudirRv.layoutManager = LinearLayoutManager(activity)
 
+        binding.backArrow.setOnClickListener{
+            val intent = Intent(context, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+
         viewModel.getDirections()
         viewModel.getDirectionsResponse.observe(viewLifecycleOwner) {
             when (it) {
@@ -51,7 +56,7 @@ class EdudirFragment :
                         )
                         dirsList.add(direction)
 
-                        dirAdapter = EdudirAdapter(dirsList)
+                        dirAdapter = EdudirAdapter(dirsList, this)
                         binding.edudirRv.adapter = dirAdapter
                     }
                 }
@@ -81,4 +86,10 @@ class EdudirFragment :
         }
     }
 
+    override fun goToEditFragment(dirId: String, facId: String) {
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.frag_edudir_fl, EditEdudirFragment(dirId, facId))
+            commit()
+        }
+    }
 }

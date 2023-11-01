@@ -6,24 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
+import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
+import com.tsu.sdp_mobile_app.admin.data.repository.FacultyRepo
+import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentAddFacultyBinding
 
-class AddFacultyFragment : Fragment() {
-    private lateinit var binding: FragmentAddFacultyBinding
-
-    companion object {
-        fun newInstance() = AddFacultyFragment()
-    }
-
-    private lateinit var viewModel: FacultyViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentAddFacultyBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+class AddFacultyFragment : BaseFragment<FacultyViewModel,FragmentAddFacultyBinding, FacultyRepo>() {
+    override fun getViewModel() = FacultyViewModel::class.java
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ) = FragmentAddFacultyBinding.inflate(inflater, container, false)
+    override fun getFragmentRepository() = FacultyRepo(dataSource.buildAPI(requireContext(), APIRequest::class.java))
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

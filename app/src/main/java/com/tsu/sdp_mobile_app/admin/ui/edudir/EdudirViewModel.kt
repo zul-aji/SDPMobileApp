@@ -9,6 +9,7 @@ import com.tsu.sdp_mobile_app.admin.data.repository.DirectionRepo
 import com.tsu.sdp_mobile_app.admin.data.response.Direction
 import com.tsu.sdp_mobile_app.admin.data.response.DirectionResponse
 import com.tsu.sdp_mobile_app.admin.data.response.DirectionsResponse
+import com.tsu.sdp_mobile_app.admin.data.response.FacultiesResponse
 import kotlinx.coroutines.launch
 
 class EdudirViewModel(
@@ -21,6 +22,10 @@ class EdudirViewModel(
     private val _getDirection : MutableLiveData<Resource<DirectionResponse>> = MutableLiveData()
     val getDirectionResponse: LiveData<Resource<DirectionResponse>>
         get() = _getDirection
+
+    private val _getFaculties : MutableLiveData<Resource<FacultiesResponse>> = MutableLiveData()
+    val getFacultiesResponse: LiveData<Resource<FacultiesResponse>>
+        get() = _getFaculties
 
     fun getDirections (
     ) = viewModelScope.launch {
@@ -50,5 +55,10 @@ class EdudirViewModel(
         id: String
     ) = viewModelScope.launch {
         _getDirection.value = repo.deleteDirection(id)
+    }
+
+    fun getFaculties (
+    ) = viewModelScope.launch {
+        _getFaculties.value = repo.getFaculties()
     }
 }

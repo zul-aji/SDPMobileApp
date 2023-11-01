@@ -6,24 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
+import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
+import com.tsu.sdp_mobile_app.admin.data.repository.GroupRepo
+import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentAddGroupBinding
 
-class AddGroupFragment : Fragment() {
-    private lateinit var binding: FragmentAddGroupBinding
+class AddGroupFragment : BaseFragment<
+        GroupViewModel, FragmentAddGroupBinding, GroupRepo>() {
+    override fun getViewModel(): Class<GroupViewModel> = GroupViewModel::class.java
 
-    companion object {
-        fun newInstance() = AddGroupFragment()
-    }
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ) = FragmentAddGroupBinding.inflate(inflater, container, false)
 
-    private lateinit var viewModel: GroupViewModel
+    override fun getFragmentRepository() = GroupRepo(dataSource.buildAPI(requireContext(), APIRequest::class.java))
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentAddGroupBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

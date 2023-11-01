@@ -6,24 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
+import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
+import com.tsu.sdp_mobile_app.admin.data.repository.DirectionRepo
+import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentAddEdudirBinding
 
-class AddEdudirFragment : Fragment() {
-    private lateinit var binding: FragmentAddEdudirBinding
+class AddEdudirFragment : BaseFragment<
+        EdudirViewModel, FragmentAddEdudirBinding, DirectionRepo>()
+{
 
-    companion object {
-        fun newInstance() = AddEdudirFragment()
-    }
+    override fun getViewModel(): Class<EdudirViewModel> = EdudirViewModel::class.java
 
-    private lateinit var viewModel: EdudirViewModel
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ) = FragmentAddEdudirBinding.inflate(inflater, container, false)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentAddEdudirBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    override fun getFragmentRepository() = DirectionRepo(dataSource.buildAPI(requireContext(), APIRequest::class.java))
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

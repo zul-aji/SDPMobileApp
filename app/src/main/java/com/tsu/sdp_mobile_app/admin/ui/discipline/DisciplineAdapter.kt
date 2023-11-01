@@ -4,20 +4,20 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.tsu.sdp_mobile_app.admin.data.response.Discipline
-import com.tsu.sdp_mobile_app.databinding.RecyclerDisBinding
-import com.tsu.sdp_mobile_app.databinding.RecyclerFgpBinding
+import com.tsu.sdp_mobile_app.databinding.RecyclerItemBinding
 
 class DisciplineAdapter (
-    private var dissList: List<Discipline>
+    private var dissList: List<Discipline>,
+    private var listener: GoToEditFragment
 ) : RecyclerView.Adapter<DisciplineAdapter.DisciplineViewHolder>() {
 
-    class DisciplineViewHolder (binding: RecyclerDisBinding) :
+    class DisciplineViewHolder (binding: RecyclerItemBinding) :
             RecyclerView.ViewHolder(binding.root) {
                 val item = binding.item
             }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DisciplineViewHolder {
-        val binding = RecyclerDisBinding.inflate(LayoutInflater.from(parent.context), null, false)
+        val binding = RecyclerItemBinding.inflate(LayoutInflater.from(parent.context), null, false)
         return DisciplineViewHolder(binding)
     }
 
@@ -25,5 +25,13 @@ class DisciplineAdapter (
 
     override fun onBindViewHolder(holder: DisciplineViewHolder, position: Int) {
         holder.item.text = dissList[position].discipline_name
+
+        holder.item.setOnClickListener {
+            listener.goToEditFragment(dissList[position].discipline_id)
+        }
+    }
+
+    interface GoToEditFragment {
+        fun goToEditFragment(discId: String)
     }
 }
