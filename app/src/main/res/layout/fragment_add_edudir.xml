@@ -48,7 +48,7 @@
         app:layout_constraintVertical_bias="0.05" />
 
     <EditText
-        android:id="@+id/edit_edudir_name"
+        android:id="@+id/add_edudir_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
@@ -64,20 +64,20 @@
         app:layout_constraintTop_toBottomOf="@+id/edudir_name_tv" />
 
     <TextView
-        android:id="@+id/prog_faculty_tv"
+        android:id="@+id/edudir_faculty_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
         android:text="Faculty"
         android:textStyle="bold"
         app:layout_constraintVertical_bias="0.05"
-        app:layout_constraintTop_toBottomOf="@+id/edit_edudir_name"
+        app:layout_constraintTop_toBottomOf="@+id/add_edudir_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
-        android:id="@+id/prog_faculty_spin"
+        android:id="@+id/edudir_faculty_spin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
@@ -88,7 +88,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prog_faculty_tv"/>
+        app:layout_constraintTop_toBottomOf="@+id/edudir_faculty_tv"/>
 
     <Button
         android:id="@+id/add_add_edudir_button"
@@ -102,7 +102,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prog_faculty_spin"/>
+        app:layout_constraintTop_toBottomOf="@+id/edudir_faculty_spin"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

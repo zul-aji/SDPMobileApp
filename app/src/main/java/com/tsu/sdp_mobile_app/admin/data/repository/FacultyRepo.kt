@@ -20,7 +20,7 @@ class FacultyRepo(
     suspend fun createFaculty(
         name: String
     ) = safeApiCall {
-        api.getFaculty(name)
+        api.createFaculty(name)
     }
 
     suspend fun updateFaculty(

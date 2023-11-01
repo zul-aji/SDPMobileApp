@@ -1,5 +1,6 @@
 package com.tsu.sdp_mobile_app.admin.ui.edudir
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -15,6 +16,7 @@ import com.tsu.sdp_mobile_app.admin.data.repository.DirectionRepo
 import com.tsu.sdp_mobile_app.admin.data.response.Faculty
 import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
 import com.tsu.sdp_mobile_app.admin.ui.faculty.FacultyAdapter
+import com.tsu.sdp_mobile_app.admin.ui.faculty.FacultyFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentEditEdudirBinding
 
 class EditEdudirFragment(dirId: String, facId: String) : BaseFragment<
@@ -109,6 +111,46 @@ class EditEdudirFragment(dirId: String, facId: String) : BaseFragment<
                     ).show()
                 }
             }
+        }
+
+        binding.editProgDeleteButton.setOnClickListener {
+            val builder = AlertDialog.Builder(context, R.style.CustomAlertDialogTheme)
+            builder.setMessage(getString(R.string.delete_dir_dialog))
+                .setCancelable(false)
+                .setPositiveButton("Yes") { _, _ ->
+                    viewModel.deleteDirection(dirID)
+                    viewModel.getDirectionResponse.observe(viewLifecycleOwner){
+                        when (it) {
+                            is Resource.Success -> {
+                                Toast.makeText(requireContext(), getString(R.string.dir_del_success), Toast.LENGTH_SHORT).show()
+                                parentFragmentManager.beginTransaction().apply {
+                                    replace(R.id.frag_edudir_fl, EdudirFragment())
+                                    commit()
+                                }
+                            }
+                            is Resource.Failure -> {
+                                Toast.makeText(
+                                    requireContext(),
+                                    if (it.isNetworkError){ "Network Error" }
+                                    else { "Fail: ${it.errorMessage.toString()}" },
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                            else -> {
+                                Toast.makeText(
+                                    requireContext(),
+                                    "unknown error",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    }
+                }
+                .setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
+                }
+            val alert = builder.create()
+            alert.show()
         }
     }
 

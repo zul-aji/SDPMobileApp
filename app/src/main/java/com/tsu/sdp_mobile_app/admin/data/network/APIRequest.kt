@@ -1,6 +1,7 @@
 package com.tsu.sdp_mobile_app.admin.data.network
 
 import com.tsu.sdp_mobile_app.admin.data.response.Direction
+import com.tsu.sdp_mobile_app.admin.data.response.DirectionRequest
 import com.tsu.sdp_mobile_app.admin.data.response.DirectionResponse
 import com.tsu.sdp_mobile_app.admin.data.response.DirectionsResponse
 import com.tsu.sdp_mobile_app.admin.data.response.Discipline
@@ -9,6 +10,7 @@ import com.tsu.sdp_mobile_app.admin.data.response.DisciplinesResponse
 import com.tsu.sdp_mobile_app.admin.data.response.FacultiesResponse
 import com.tsu.sdp_mobile_app.admin.data.response.FacultyResponse
 import com.tsu.sdp_mobile_app.admin.data.response.Group
+import com.tsu.sdp_mobile_app.admin.data.response.GroupRequest
 import com.tsu.sdp_mobile_app.admin.data.response.GroupResponse
 import com.tsu.sdp_mobile_app.admin.data.response.GroupsResponse
 import retrofit2.http.*
@@ -68,12 +70,12 @@ interface APIRequest {
 
     @POST("Direction/CreateDirection")
     suspend fun createDirection(
-        @Body direction : Direction
+        @Body newDirection : DirectionRequest
     ) : DirectionResponse
 
     @POST("Group/CreateGroup")
     suspend fun createGroup(
-        @Body group: Group
+        @Body newGroup: GroupRequest
     ) : GroupResponse
 
     @PUT("Faculty/UpdateFaculty?id={id}&name={name}")

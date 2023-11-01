@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/add_group_tv" />
 
     <EditText
-        android:id="@+id/edit_group_name"
+        android:id="@+id/add_group_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
@@ -73,11 +73,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_group_name"
+        app:layout_constraintTop_toBottomOf="@+id/add_group_name"
         app:layout_constraintVertical_bias="0.05" />
 
     <Spinner
-        android:id="@+id/group_faculty_spin"
+        android:id="@+id/group_edudir_spin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
@@ -102,7 +102,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/group_faculty_spin"/>
+        app:layout_constraintTop_toBottomOf="@+id/group_edudir_spin"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

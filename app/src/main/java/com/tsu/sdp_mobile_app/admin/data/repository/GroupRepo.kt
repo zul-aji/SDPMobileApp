@@ -2,6 +2,7 @@ package com.tsu.sdp_mobile_app.admin.data.repository
 
 import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
 import com.tsu.sdp_mobile_app.admin.data.response.Group
+import com.tsu.sdp_mobile_app.admin.data.response.GroupRequest
 
 class GroupRepo(
     private val api: APIRequest
@@ -25,9 +26,9 @@ class GroupRepo(
     }
 
     suspend fun createGroup (
-        group: Group
+        newGroup: GroupRequest
     ) = safeApiCall {
-        api.createGroup(group)
+        api.createGroup(newGroup)
     }
 
     suspend fun updateGroup (

@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.DirectionRepo
 import com.tsu.sdp_mobile_app.admin.data.response.Direction
+import com.tsu.sdp_mobile_app.admin.data.response.DirectionRequest
 import com.tsu.sdp_mobile_app.admin.data.response.DirectionResponse
 import com.tsu.sdp_mobile_app.admin.data.response.DirectionsResponse
 import com.tsu.sdp_mobile_app.admin.data.response.FacultiesResponse
@@ -22,6 +23,10 @@ class EdudirViewModel(
     private val _getDirection : MutableLiveData<Resource<DirectionResponse>> = MutableLiveData()
     val getDirectionResponse: LiveData<Resource<DirectionResponse>>
         get() = _getDirection
+
+    private val _createDirection : MutableLiveData<Resource<DirectionResponse>> = MutableLiveData()
+    val createDirectionResponse: LiveData<Resource<DirectionResponse>>
+        get() = _createDirection
 
     private val _getFaculties : MutableLiveData<Resource<FacultiesResponse>> = MutableLiveData()
     val getFacultiesResponse: LiveData<Resource<FacultiesResponse>>
@@ -39,9 +44,9 @@ class EdudirViewModel(
     }
 
     fun createDirection (
-        direction: Direction
+        newDirection : DirectionRequest
     ) = viewModelScope.launch {
-        _getDirection.value = repo.createDirection(direction)
+        _createDirection.value = repo.createDirection(newDirection)
     }
 
     fun updateDirection (

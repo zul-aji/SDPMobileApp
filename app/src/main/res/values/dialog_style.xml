@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Customize the background color of the dialog -->
+        <item name="android:windowBackground">@color/white</item>
+        <!-- Customize the font color of the dialog -->
+        <item name="android:textColorPrimary">@color/primary_blue</item>
+        <!-- Customize the color of the positive button -->
+        <item name="colorAccent">@color/primary_blue</item>
+        <!-- Customize the color of the negative button -->
+        <item name="android:textColorSecondary">@color/red_text</item>
+    </style>
+
+
+</resources>

@@ -1,5 +1,6 @@
 package com.tsu.sdp_mobile_app.admin.ui.faculty
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -57,6 +58,46 @@ class EditFacultyFragment(facultyId: String) : BaseFragment<
                     ).show()
                 }
             }
+        }
+
+        binding.editFacDeleteButton.setOnClickListener {
+            val builder = AlertDialog.Builder(context, R.style.CustomAlertDialogTheme)
+            builder.setMessage(getString(R.string.delete_fac_dialog))
+                .setCancelable(false)
+                .setPositiveButton("Yes") { _, _ ->
+                    viewModel.deleteFaculty(facID)
+                    viewModel.getFacultyResponse.observe(viewLifecycleOwner){
+                        when (it) {
+                            is Resource.Success -> {
+                                Toast.makeText(requireContext(), getString(R.string.fac_del_success), Toast.LENGTH_SHORT).show()
+                                parentFragmentManager.beginTransaction().apply {
+                                    replace(R.id.frag_faculty_fl, FacultyFragment())
+                                    commit()
+                                }
+                            }
+                            is Resource.Failure -> {
+                                Toast.makeText(
+                                    requireContext(),
+                                    if (it.isNetworkError){ "Network Error" }
+                                    else { "Fail: ${it.errorMessage.toString()}" },
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                            else -> {
+                                Toast.makeText(
+                                    requireContext(),
+                                    "unknown error",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    }
+                }
+                .setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
+                }
+            val alert = builder.create()
+            alert.show()
         }
     }
 

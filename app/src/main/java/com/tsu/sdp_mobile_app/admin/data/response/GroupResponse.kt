@@ -27,3 +27,8 @@ data class Group(
     val direction_id: String,
     val group_name: String
 )
+
+data class GroupRequest(
+    val direction_id: String,
+    val group_name: String
+)

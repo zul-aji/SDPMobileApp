@@ -8,6 +8,7 @@ import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.GroupRepo
 import com.tsu.sdp_mobile_app.admin.data.response.DirectionsResponse
 import com.tsu.sdp_mobile_app.admin.data.response.Group
+import com.tsu.sdp_mobile_app.admin.data.response.GroupRequest
 import com.tsu.sdp_mobile_app.admin.data.response.GroupResponse
 import com.tsu.sdp_mobile_app.admin.data.response.GroupsResponse
 import kotlinx.coroutines.launch
@@ -22,6 +23,10 @@ class GroupViewModel(
     private val _getGroup : MutableLiveData<Resource<GroupResponse>> = MutableLiveData()
     val getGroupResponse: LiveData<Resource<GroupResponse>>
         get() = _getGroup
+
+    private val _createGroup : MutableLiveData<Resource<GroupResponse>> = MutableLiveData()
+    val createGroupResponse: LiveData<Resource<GroupResponse>>
+        get() = _createGroup
 
     private val _getDirections : MutableLiveData<Resource<DirectionsResponse>> = MutableLiveData()
     val getDirectionsResponse: LiveData<Resource<DirectionsResponse>>
@@ -45,9 +50,9 @@ class GroupViewModel(
     }
 
     fun createGroup (
-        group: Group
+        newGroup: GroupRequest
     ) = viewModelScope.launch {
-        _getGroup.value = repo.createGroup(group)
+        _createGroup.value = repo.createGroup(newGroup)
     }
 
     fun updateGroup (

@@ -27,3 +27,8 @@ data class Direction(
     val faculty_id: String,
     val direction_name: String
 )
+
+data class DirectionRequest(
+    val faculty_id: String,
+    val direction_name: String
+)

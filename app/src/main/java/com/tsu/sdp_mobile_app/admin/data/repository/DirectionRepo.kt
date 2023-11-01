@@ -2,6 +2,7 @@ package com.tsu.sdp_mobile_app.admin.data.repository
 
 import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
 import com.tsu.sdp_mobile_app.admin.data.response.Direction
+import com.tsu.sdp_mobile_app.admin.data.response.DirectionRequest
 
 class DirectionRepo(
     private val api: APIRequest
@@ -24,9 +25,9 @@ class DirectionRepo(
     }
 
     suspend fun createDirection(
-        direction: Direction
+        newDirection : DirectionRequest
     ) = safeApiCall {
-        api.createDirection(direction)
+        api.createDirection(newDirection)
     }
 
     suspend fun updateDirection(

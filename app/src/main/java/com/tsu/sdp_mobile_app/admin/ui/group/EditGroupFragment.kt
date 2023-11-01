@@ -1,7 +1,9 @@
 package com.tsu.sdp_mobile_app.admin.ui.group
 
+import android.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +16,7 @@ import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.GroupRepo
 import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
 import com.tsu.sdp_mobile_app.admin.ui.edudir.EdudirFragment
+import com.tsu.sdp_mobile_app.admin.ui.faculty.FacultyFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentEditGroupBinding
 
 class EditGroupFragment(groupId: String, dirId: String) : BaseFragment<
@@ -55,12 +58,6 @@ class EditGroupFragment(groupId: String, dirId: String) : BaseFragment<
                         dirsIDList.add(directionID)
                         dirsNameList.add(directionName)
                     }
-                    for ((index, facultyId) in dirsIDList.withIndex()) {
-                        if (facultyId == currDirID) {
-                            currIndex = index
-                            break
-                        }
-                    }
                 }
                 is Resource.Failure -> {
                     Toast.makeText(
@@ -89,6 +86,13 @@ class EditGroupFragment(groupId: String, dirId: String) : BaseFragment<
                     val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, dirsNameList)
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                     spinValue.adapter = adapter
+                    for ((index, directionId) in dirsIDList.withIndex()) {
+                        if (directionId == currDirID) {
+                            currIndex = index
+                            Log.e("index", currIndex.toString() )
+                            break
+                        }
+                    }
                     spinValue.setSelection(currIndex)
                 }
                 is Resource.Failure -> {
@@ -107,6 +111,46 @@ class EditGroupFragment(groupId: String, dirId: String) : BaseFragment<
                     ).show()
                 }
             }
+        }
+
+        binding.editGroupDeleteButton.setOnClickListener {
+            val builder = AlertDialog.Builder(context, R.style.CustomAlertDialogTheme)
+            builder.setMessage(getString(R.string.delete_group_dialog))
+                .setCancelable(false)
+                .setPositiveButton("Yes") { _, _ ->
+                    viewModel.deleteGroup(groupID)
+                    viewModel.getGroupResponse.observe(viewLifecycleOwner){
+                        when (it) {
+                            is Resource.Success -> {
+                                Toast.makeText(requireContext(), getString(R.string.group_del_success), Toast.LENGTH_SHORT).show()
+                                parentFragmentManager.beginTransaction().apply {
+                                    replace(R.id.frag_group_fl, GroupFragment())
+                                    commit()
+                                }
+                            }
+                            is Resource.Failure -> {
+                                Toast.makeText(
+                                    requireContext(),
+                                    if (it.isNetworkError){ "Network Error" }
+                                    else { "Fail: ${it.errorMessage.toString()}" },
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                            else -> {
+                                Toast.makeText(
+                                    requireContext(),
+                                    "unknown error",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    }
+                }
+                .setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
+                }
+            val alert = builder.create()
+            alert.show()
         }
     }
 }
