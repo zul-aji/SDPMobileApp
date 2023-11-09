@@ -28,7 +28,7 @@ class GroupAdapter (
         holder.item.text = groupList[position].group_name
 
         holder.item.setOnClickListener {
-            listener.goToEditFragment(groupList[position].group_id, groupList[position].group_name)
+            listener.goToEditFragment(groupList[position].group_id, groupList[position].direction_id)
         }
     }
 

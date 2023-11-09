@@ -46,18 +46,21 @@
     <!-- Faculty Fragment  -->
     <string name="fac_name_mt">Faculty Name Required</string>
     <string name="fac_made_success">Faculty Successfully Made</string>
+    <string name="fac_up_success">Faculty Updated Successfully</string>
     <string name="delete_fac_dialog">Are you sure you want to remove this Faculty?</string>
     <string name="fac_del_success">Faculty Deleted Successfully</string>
 
     <!-- Direction Fragment  -->
     <string name="dir_name_mt">Educational Direction Name Required</string>
     <string name="dir_made_success">Educational Direction Successfully Made</string>
+    <string name="dir_up_success">Educational Direction Updated Successfully</string>
     <string name="delete_dir_dialog">Are you sure you want to remove this Education Direction?</string>
     <string name="dir_del_success">Education Direction Deleted Successfully</string>
 
     <!-- Group Fragment  -->
     <string name="group_name_mt">Group Name Required</string>
     <string name="group_made_success">Group Successfully Made</string>
+    <string name="group_up_success">Group Updated Successfully</string>
     <string name="delete_group_dialog">Are you sure you want to remove this Group?</string>
     <string name="group_del_success">Group Deleted Successfully</string>
 
@@ -70,6 +73,7 @@
     <string name="disc_build_mt">Discipline Building Required</string>
     <string name="disc_room_mt">Discipline Room Number Required</string>
     <string name="disc_made_success">Discipline Successfully Made</string>
+    <string name="disc_up_success">Discipline Updated Successfully</string>
     <string name="delete_disc_dialog">Are you sure you want to remove this Discipline?</string>
     <string name="disc_del_success">Discipline Deleted Successfully</string>
 </resources>

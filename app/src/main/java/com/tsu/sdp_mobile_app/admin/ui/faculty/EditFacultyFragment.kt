@@ -2,6 +2,7 @@ package com.tsu.sdp_mobile_app.admin.ui.faculty
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,7 @@ import com.tsu.sdp_mobile_app.databinding.FragmentEditFacultyBinding
 class EditFacultyFragment(facultyId: String) : BaseFragment<
         FacultyViewModel, FragmentEditFacultyBinding, FacultyRepo>()
 {
+    private var isAllFieldsChecked = false
     private var facID = facultyId
     override fun getViewModel() = FacultyViewModel::class.java
 
@@ -56,6 +58,42 @@ class EditFacultyFragment(facultyId: String) : BaseFragment<
                         "unknown error",
                         Toast.LENGTH_SHORT
                     ).show()
+                }
+            }
+        }
+
+        binding.editFacSaveButton.setOnClickListener {
+            val facultyName = binding.editEditFacName.text.toString()
+
+            isAllFieldsChecked = checkAllFields()
+            if (isAllFieldsChecked){
+                viewModel.updateFaculty(facID, facultyName)
+                viewModel.getFacultyResponse.observe(viewLifecycleOwner) {
+                    when (it) {
+                        is Resource.Success -> {
+                            Toast.makeText(requireContext(), getString(R.string.fac_up_success), Toast.LENGTH_SHORT).show()
+                            parentFragmentManager.beginTransaction().apply {
+                                replace(R.id.frag_faculty_fl, FacultyFragment())
+                                commit()
+                            }
+                        }
+                        is Resource.Failure -> {
+                            it.errorMessage?.let { it1 -> Log.e("error", it1, ) }
+                            Toast.makeText(
+                                requireContext(),
+                                if (it.isNetworkError){ it.errorMessage}
+                                else { "Fail: ${it.errorMessage.toString()}" },
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        else -> {
+                            Toast.makeText(
+                                requireContext(),
+                                "unknown error",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
                 }
             }
         }
@@ -101,4 +139,11 @@ class EditFacultyFragment(facultyId: String) : BaseFragment<
         }
     }
 
+    private fun checkAllFields(): Boolean {
+        if (binding.editEditFacName.length() == 0) {
+            Toast.makeText(requireContext(), getString(R.string.fac_name_mt), Toast.LENGTH_SHORT).show()
+            return false
+        }
+        return true
+    }
 }

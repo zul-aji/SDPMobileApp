@@ -78,10 +78,10 @@ interface APIRequest {
         @Body newGroup: GroupRequest
     ) : GroupResponse
 
-    @PUT("Faculty/UpdateFaculty?id={id}&name={name}")
+    @PUT("Faculty/UpdateFaculty")
     suspend fun updateFaculty(
-        @Path ("id") id : String,
-        @Path ("name") name : String
+        @Query ("id") id : String,
+        @Query ("name") name : String
     ) : FacultyResponse
 
     @PUT("Discipline/UpdateDiscipline/{id}")

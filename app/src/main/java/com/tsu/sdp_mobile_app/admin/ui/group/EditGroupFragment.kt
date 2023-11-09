@@ -14,6 +14,7 @@ import com.tsu.sdp_mobile_app.R
 import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
 import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.GroupRepo
+import com.tsu.sdp_mobile_app.admin.data.response.Group
 import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
 import com.tsu.sdp_mobile_app.admin.ui.edudir.EdudirFragment
 import com.tsu.sdp_mobile_app.admin.ui.faculty.FacultyFragment
@@ -26,6 +27,7 @@ class EditGroupFragment(groupId: String, dirId: String) : BaseFragment<
     private val dirsNameList = ArrayList<String>()
     private var groupID = groupId
     private var currDirID = dirId
+    private var isAllFieldsChecked = false
     override fun getViewModel(): Class<GroupViewModel> = GroupViewModel::class.java
 
     override fun getFragmentBinding(
@@ -46,6 +48,8 @@ class EditGroupFragment(groupId: String, dirId: String) : BaseFragment<
         }
 
         var currIndex = 0
+        val spinValue = binding.editGroupEdudirSpin
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, dirsNameList)
 
         viewModel.getDirections()
         viewModel.getDirectionsResponse.observe(viewLifecycleOwner) {
@@ -58,32 +62,7 @@ class EditGroupFragment(groupId: String, dirId: String) : BaseFragment<
                         dirsIDList.add(directionID)
                         dirsNameList.add(directionName)
                     }
-                }
-                is Resource.Failure -> {
-                    Toast.makeText(
-                        requireContext(),
-                        if (it.isNetworkError){ "Network Error" }
-                        else { "Fail: ${it.errorMessage.toString()}" },
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                else -> {
-                    Toast.makeText(
-                        requireContext(),
-                        "unknown error",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-        }
 
-        viewModel.getGroup(groupID)
-        viewModel.getGroupResponse.observe(viewLifecycleOwner){
-            when (it) {
-                is Resource.Success -> {
-                    binding.editGroupName.setText(it.value.result.group.group_name)
-                    val spinValue = binding.editGroupEdudirSpin
-                    val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, dirsNameList)
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                     spinValue.adapter = adapter
                     for ((index, directionId) in dirsIDList.withIndex()) {
@@ -109,6 +88,67 @@ class EditGroupFragment(groupId: String, dirId: String) : BaseFragment<
                         "unknown error",
                         Toast.LENGTH_SHORT
                     ).show()
+                }
+            }
+        }
+
+        viewModel.getGroup(groupID)
+        viewModel.getGroupResponse.observe(viewLifecycleOwner){
+            when (it) {
+                is Resource.Success -> {
+                    binding.editGroupName.setText(it.value.result.group.group_name)
+                }
+                is Resource.Failure -> {
+                    Toast.makeText(
+                        requireContext(),
+                        if (it.isNetworkError){ "Network Error" }
+                        else { "Fail: ${it.errorMessage.toString()}" },
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                else -> {
+                    Toast.makeText(
+                        requireContext(),
+                        "unknown error",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
+
+        binding.editGroupSaveButton.setOnClickListener {
+            val groupid = dirsIDList[spinValue.selectedItemId.toInt()]
+            val groupname = binding.editGroupName.text.toString()
+            val groupDet = Group(groupID, groupid, groupname)
+
+            isAllFieldsChecked = checkAllFields()
+            if (isAllFieldsChecked) {
+                viewModel.updateGroup(groupID, groupDet)
+                viewModel.getGroupResponse.observe(viewLifecycleOwner) {
+                    when (it) {
+                        is Resource.Success -> {
+                            Toast.makeText(requireContext(), getString(R.string.group_up_success), Toast.LENGTH_SHORT).show()
+                            parentFragmentManager.beginTransaction().apply {
+                                replace(R.id.frag_group_fl, GroupFragment())
+                                commit()
+                            }
+                        }
+                        is Resource.Failure -> {
+                            Toast.makeText(
+                                requireContext(),
+                                if (it.isNetworkError){ "Network Error" }
+                                else { "Fail: ${it.errorMessage.toString()}" },
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        else -> {
+                            Toast.makeText(
+                                requireContext(),
+                                "unknown error",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
                 }
             }
         }
@@ -152,5 +192,13 @@ class EditGroupFragment(groupId: String, dirId: String) : BaseFragment<
             val alert = builder.create()
             alert.show()
         }
+    }
+
+    private fun checkAllFields(): Boolean {
+        if (binding.editGroupName.length() == 0) {
+            Toast.makeText(requireContext(), getString(R.string.dir_name_mt), Toast.LENGTH_SHORT).show()
+            return false
+        }
+        return true
     }
 }
