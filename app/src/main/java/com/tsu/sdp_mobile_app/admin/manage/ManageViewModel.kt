@@ -1,13 +1,13 @@
-package com.tsu.sdp_mobile_app.ui.spring
+package com.tsu.sdp_mobile_app.admin.manage
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SpringViewModel : ViewModel() {
+class ManageViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is spring Fragment"
+        value = "This is manage Fragment"
     }
     val text: LiveData<String> = _text
 }

@@ -13,7 +13,7 @@ import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
 import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.FacultyRepo
 import com.tsu.sdp_mobile_app.admin.data.response.Faculty
-import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
+import com.tsu.sdp_mobile_app.base.BaseFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentFacultyBinding
 
 class FacultyFragment :

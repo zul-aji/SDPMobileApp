@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.ui.autumn
+package com.tsu.sdp_mobile_app.teacher.disct
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.tsu.sdp_mobile_app.databinding.FragmentAutumnBinding
-import com.tsu.sdp_mobile_app.ui.autumn.AutumnViewModel
+import com.tsu.sdp_mobile_app.databinding.FragmentDisciplineTBinding
 
-class AutumnFragment : Fragment() {
+class DisciplineTFragment : Fragment() {
 
-    private var _binding: FragmentAutumnBinding? = null
+    private var _binding: FragmentDisciplineTBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,14 +22,14 @@ class AutumnFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val autumnViewModel =
-            ViewModelProvider(this).get(AutumnViewModel::class.java)
+        val homeViewModel =
+            ViewModelProvider(this)[DisciplineTViewModel::class.java]
 
-        _binding = FragmentAutumnBinding.inflate(inflater, container, false)
+        _binding = FragmentDisciplineTBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textGallery
-        autumnViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textDisciplineT
+        homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

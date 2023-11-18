@@ -15,10 +15,10 @@ import com.tsu.sdp_mobile_app.R
 import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
 import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.FacultyRepo
-import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
+import com.tsu.sdp_mobile_app.base.BaseFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentAddFacultyBinding
 
-class AddFacultyFragment : BaseFragment<FacultyViewModel,FragmentAddFacultyBinding, FacultyRepo>() {
+class AddFacultyFragment : BaseFragment<FacultyViewModel, FragmentAddFacultyBinding, FacultyRepo>() {
 
     private var isAllFieldsChecked = false
     override fun getViewModel() = FacultyViewModel::class.java

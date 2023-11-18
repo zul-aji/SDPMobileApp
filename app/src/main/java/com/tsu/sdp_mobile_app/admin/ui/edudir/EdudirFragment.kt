@@ -13,7 +13,7 @@ import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
 import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.DirectionRepo
 import com.tsu.sdp_mobile_app.admin.data.response.Direction
-import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
+import com.tsu.sdp_mobile_app.base.BaseFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentEdudirBinding
 
 class EdudirFragment :

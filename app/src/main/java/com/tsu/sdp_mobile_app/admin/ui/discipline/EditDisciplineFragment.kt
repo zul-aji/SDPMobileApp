@@ -12,7 +12,7 @@ import com.tsu.sdp_mobile_app.R
 import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
 import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.DisciplineRepo
-import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
+import com.tsu.sdp_mobile_app.base.BaseFragment
 import com.tsu.sdp_mobile_app.admin.ui.faculty.FacultyFragment
 import com.tsu.sdp_mobile_app.admin.ui.group.GroupFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentEditDisciplineBinding

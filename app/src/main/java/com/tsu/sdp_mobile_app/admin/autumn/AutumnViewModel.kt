@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.ui.autumn
+package com.tsu.sdp_mobile_app.admin.autumn
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

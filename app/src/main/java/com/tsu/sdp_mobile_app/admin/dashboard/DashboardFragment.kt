@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.ui.dashboard
+package com.tsu.sdp_mobile_app.admin.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -15,6 +15,14 @@
         android:theme="@style/Theme.SDP_mobile_app"
         tools:targetApi="31">
         <activity
+            android:name=".teacher.MyDisciplineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainTeacherActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main_teacher"
+            android:theme="@style/Theme.SDP_mobile_app.NoActionBar" />
+        <activity
             android:name=".regist.ui.Register.RegisterActivity"
             android:exported="false" />
         <activity
@@ -32,9 +40,9 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTask"
             android:exported="false"
             android:label="@string/app_name"
+            android:launchMode="singleTask"
             android:theme="@style/Theme.SDP_mobile_app.NoActionBar" />
         <activity
             android:name=".admin.FacultyActivity"

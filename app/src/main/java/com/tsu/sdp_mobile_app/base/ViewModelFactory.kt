@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.admin.ui.base
+package com.tsu.sdp_mobile_app.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

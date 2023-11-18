@@ -16,7 +16,7 @@ import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.DisciplineRepo
 import com.tsu.sdp_mobile_app.admin.data.response.Discipline
 import com.tsu.sdp_mobile_app.admin.data.response.Faculty
-import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
+import com.tsu.sdp_mobile_app.base.BaseFragment
 import com.tsu.sdp_mobile_app.admin.ui.edudir.EdudirAdapter
 import com.tsu.sdp_mobile_app.admin.ui.faculty.FacultyAdapter
 import com.tsu.sdp_mobile_app.admin.ui.group.EditGroupFragment

@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.ui.manage
+package com.tsu.sdp_mobile_app.admin.manage
 
 import android.content.Intent
 import android.os.Bundle

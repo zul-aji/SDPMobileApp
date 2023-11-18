@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.ui.spring
+package com.tsu.sdp_mobile_app.admin.spring
 
 import android.os.Bundle
 import android.view.LayoutInflater

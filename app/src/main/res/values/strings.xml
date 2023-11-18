@@ -76,4 +76,8 @@
     <string name="disc_up_success">Discipline Updated Successfully</string>
     <string name="delete_disc_dialog">Are you sure you want to remove this Discipline?</string>
     <string name="disc_del_success">Discipline Deleted Successfully</string>
+    <string name="title_activity_main_teacher">MainTeacherActivity</string>
+
+    <string name="menu_discipline_teacher">Discipline</string>
+    <string name="menu_profile_teacher">Profile</string>
 </resources>

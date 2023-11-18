@@ -15,7 +15,7 @@ import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
 import com.tsu.sdp_mobile_app.admin.data.network.Resource
 import com.tsu.sdp_mobile_app.admin.data.repository.GroupRepo
 import com.tsu.sdp_mobile_app.admin.data.response.Group
-import com.tsu.sdp_mobile_app.admin.ui.base.BaseFragment
+import com.tsu.sdp_mobile_app.base.BaseFragment
 import com.tsu.sdp_mobile_app.admin.ui.edudir.EditEdudirFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentGroupBinding
 
