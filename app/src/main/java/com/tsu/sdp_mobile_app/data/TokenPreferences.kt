@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.admin.data
+package com.tsu.sdp_mobile_app.data
 
 import android.content.Context
 import android.content.SharedPreferences

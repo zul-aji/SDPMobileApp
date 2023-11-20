@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tsu.sdp_mobile_app.R
-import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
-import com.tsu.sdp_mobile_app.admin.data.repository.DisciplineRepo
+import com.tsu.sdp_mobile_app.data.network.APIRequest
+import com.tsu.sdp_mobile_app.data.repository.DisciplineRepo
 import com.tsu.sdp_mobile_app.base.BaseFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentAddDisciplineBinding
 

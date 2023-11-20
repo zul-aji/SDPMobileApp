@@ -1,6 +1,6 @@
-package com.tsu.sdp_mobile_app.admin.data.repository
+package com.tsu.sdp_mobile_app.data.repository
 
-import com.tsu.sdp_mobile_app.admin.data.network.Resource
+import com.tsu.sdp_mobile_app.data.network.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONException

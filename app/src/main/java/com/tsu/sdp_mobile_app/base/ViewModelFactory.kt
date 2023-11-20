@@ -2,11 +2,11 @@ package com.tsu.sdp_mobile_app.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.tsu.sdp_mobile_app.admin.data.repository.BaseRepo
-import com.tsu.sdp_mobile_app.admin.data.repository.DirectionRepo
-import com.tsu.sdp_mobile_app.admin.data.repository.DisciplineRepo
-import com.tsu.sdp_mobile_app.admin.data.repository.FacultyRepo
-import com.tsu.sdp_mobile_app.admin.data.repository.GroupRepo
+import com.tsu.sdp_mobile_app.data.repository.BaseRepo
+import com.tsu.sdp_mobile_app.data.repository.DirectionRepo
+import com.tsu.sdp_mobile_app.data.repository.DisciplineRepo
+import com.tsu.sdp_mobile_app.data.repository.FacultyRepo
+import com.tsu.sdp_mobile_app.data.repository.GroupRepo
 import com.tsu.sdp_mobile_app.admin.ui.discipline.DisciplineViewModel
 import com.tsu.sdp_mobile_app.admin.ui.edudir.EdudirViewModel
 import com.tsu.sdp_mobile_app.admin.ui.faculty.FacultyViewModel

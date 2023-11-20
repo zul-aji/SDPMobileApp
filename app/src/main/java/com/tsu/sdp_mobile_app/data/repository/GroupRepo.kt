@@ -1,8 +1,8 @@
-package com.tsu.sdp_mobile_app.admin.data.repository
+package com.tsu.sdp_mobile_app.data.repository
 
-import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
-import com.tsu.sdp_mobile_app.admin.data.response.Group
-import com.tsu.sdp_mobile_app.admin.data.response.GroupRequest
+import com.tsu.sdp_mobile_app.data.network.APIRequest
+import com.tsu.sdp_mobile_app.data.response.Group
+import com.tsu.sdp_mobile_app.data.response.GroupRequest
 
 class GroupRepo(
     private val api: APIRequest

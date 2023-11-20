@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/nav_discipline_t"
-        android:name="com.tsu.sdp_mobile_app.teacher.disct.DisciplineTFragment"
+        android:name="com.tsu.sdp_mobile_app.teacher.DisciplineTFragment"
         android:label="@string/menu_discipline_teacher"
-        tools:layout="@layout/fragment_discipline_t" />
+        tools:layout="@layout/fragment_edit_discipline_t" />
 
     <fragment
         android:id="@+id/nav_profile_t"
-        android:name="com.tsu.sdp_mobile_app.teacher.profilet.ProfileTFragment"
+        android:name="com.tsu.sdp_mobile_app.teacher.ProfileTFragment"
         android:label="@string/menu_profile_teacher"
         tools:layout="@layout/fragment_profile_t" />
 </navigation>

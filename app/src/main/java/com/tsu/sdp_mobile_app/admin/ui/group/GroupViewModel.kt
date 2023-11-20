@@ -4,13 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tsu.sdp_mobile_app.admin.data.network.Resource
-import com.tsu.sdp_mobile_app.admin.data.repository.GroupRepo
-import com.tsu.sdp_mobile_app.admin.data.response.DirectionsResponse
-import com.tsu.sdp_mobile_app.admin.data.response.Group
-import com.tsu.sdp_mobile_app.admin.data.response.GroupRequest
-import com.tsu.sdp_mobile_app.admin.data.response.GroupResponse
-import com.tsu.sdp_mobile_app.admin.data.response.GroupsResponse
+import com.tsu.sdp_mobile_app.data.network.Resource
+import com.tsu.sdp_mobile_app.data.repository.GroupRepo
+import com.tsu.sdp_mobile_app.data.response.DirectionsResponse
+import com.tsu.sdp_mobile_app.data.response.Group
+import com.tsu.sdp_mobile_app.data.response.GroupRequest
+import com.tsu.sdp_mobile_app.data.response.GroupResponse
+import com.tsu.sdp_mobile_app.data.response.GroupsResponse
 import kotlinx.coroutines.launch
 
 class GroupViewModel(

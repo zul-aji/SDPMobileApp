@@ -11,10 +11,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.tsu.sdp_mobile_app.R
-import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
-import com.tsu.sdp_mobile_app.admin.data.network.Resource
-import com.tsu.sdp_mobile_app.admin.data.repository.GroupRepo
-import com.tsu.sdp_mobile_app.admin.data.response.Group
+import com.tsu.sdp_mobile_app.data.network.APIRequest
+import com.tsu.sdp_mobile_app.data.network.Resource
+import com.tsu.sdp_mobile_app.data.repository.GroupRepo
+import com.tsu.sdp_mobile_app.data.response.Group
 import com.tsu.sdp_mobile_app.base.BaseFragment
 import com.tsu.sdp_mobile_app.admin.ui.edudir.EdudirFragment
 import com.tsu.sdp_mobile_app.admin.ui.faculty.FacultyFragment

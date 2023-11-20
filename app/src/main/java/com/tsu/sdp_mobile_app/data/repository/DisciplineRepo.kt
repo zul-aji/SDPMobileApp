@@ -1,7 +1,7 @@
-package com.tsu.sdp_mobile_app.admin.data.repository
+package com.tsu.sdp_mobile_app.data.repository
 
-import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
-import com.tsu.sdp_mobile_app.admin.data.response.Discipline
+import com.tsu.sdp_mobile_app.data.network.APIRequest
+import com.tsu.sdp_mobile_app.data.response.Discipline
 
 class DisciplineRepo(
     private val api: APIRequest

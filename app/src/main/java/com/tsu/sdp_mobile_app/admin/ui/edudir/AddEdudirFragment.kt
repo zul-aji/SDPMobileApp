@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.tsu.sdp_mobile_app.R
-import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
-import com.tsu.sdp_mobile_app.admin.data.network.Resource
-import com.tsu.sdp_mobile_app.admin.data.repository.DirectionRepo
-import com.tsu.sdp_mobile_app.admin.data.response.DirectionRequest
+import com.tsu.sdp_mobile_app.data.network.APIRequest
+import com.tsu.sdp_mobile_app.data.network.Resource
+import com.tsu.sdp_mobile_app.data.repository.DirectionRepo
+import com.tsu.sdp_mobile_app.data.response.DirectionRequest
 import com.tsu.sdp_mobile_app.base.BaseFragment
 import com.tsu.sdp_mobile_app.admin.ui.faculty.FacultyFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentAddEdudirBinding

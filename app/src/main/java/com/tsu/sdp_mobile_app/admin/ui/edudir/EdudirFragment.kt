@@ -9,10 +9,10 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tsu.sdp_mobile_app.MainActivity
 import com.tsu.sdp_mobile_app.R
-import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
-import com.tsu.sdp_mobile_app.admin.data.network.Resource
-import com.tsu.sdp_mobile_app.admin.data.repository.DirectionRepo
-import com.tsu.sdp_mobile_app.admin.data.response.Direction
+import com.tsu.sdp_mobile_app.data.network.APIRequest
+import com.tsu.sdp_mobile_app.data.network.Resource
+import com.tsu.sdp_mobile_app.data.repository.DirectionRepo
+import com.tsu.sdp_mobile_app.data.response.Direction
 import com.tsu.sdp_mobile_app.base.BaseFragment
 import com.tsu.sdp_mobile_app.databinding.FragmentEdudirBinding
 

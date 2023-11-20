@@ -3,7 +3,7 @@ package com.tsu.sdp_mobile_app.admin.ui.group
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.tsu.sdp_mobile_app.admin.data.response.Group
+import com.tsu.sdp_mobile_app.data.response.Group
 import com.tsu.sdp_mobile_app.admin.ui.edudir.EdudirAdapter
 import com.tsu.sdp_mobile_app.databinding.RecyclerItemBinding
 

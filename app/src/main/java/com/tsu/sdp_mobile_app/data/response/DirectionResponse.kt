@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.admin.data.response
+package com.tsu.sdp_mobile_app.data.response
 
 data class DirectionsResponse(
     val statusCode: Int,

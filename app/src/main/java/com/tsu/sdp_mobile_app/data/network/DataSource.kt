@@ -1,8 +1,8 @@
-package com.tsu.sdp_mobile_app.admin.data.network
+package com.tsu.sdp_mobile_app.data.network
 
 import android.content.Context
 import com.tsu.sdp_mobile_app.BuildConfig
-import com.tsu.sdp_mobile_app.admin.data.TokenPreferences
+import com.tsu.sdp_mobile_app.data.TokenPreferences
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

@@ -1,8 +1,8 @@
-package com.tsu.sdp_mobile_app.admin.data.repository
+package com.tsu.sdp_mobile_app.data.repository
 
-import com.tsu.sdp_mobile_app.admin.data.network.APIRequest
-import com.tsu.sdp_mobile_app.admin.data.response.Direction
-import com.tsu.sdp_mobile_app.admin.data.response.DirectionRequest
+import com.tsu.sdp_mobile_app.data.network.APIRequest
+import com.tsu.sdp_mobile_app.data.response.Direction
+import com.tsu.sdp_mobile_app.data.response.DirectionRequest
 
 class DirectionRepo(
     private val api: APIRequest

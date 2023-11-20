@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tsu.sdp_mobile_app.admin.data.network.Resource
-import com.tsu.sdp_mobile_app.admin.data.repository.DisciplineRepo
-import com.tsu.sdp_mobile_app.admin.data.response.Discipline
-import com.tsu.sdp_mobile_app.admin.data.response.DisciplineResponse
-import com.tsu.sdp_mobile_app.admin.data.response.DisciplinesResponse
+import com.tsu.sdp_mobile_app.data.network.Resource
+import com.tsu.sdp_mobile_app.data.repository.DisciplineRepo
+import com.tsu.sdp_mobile_app.data.response.Discipline
+import com.tsu.sdp_mobile_app.data.response.DisciplineResponse
+import com.tsu.sdp_mobile_app.data.response.DisciplinesResponse
 import kotlinx.coroutines.launch
 
 class DisciplineViewModel(

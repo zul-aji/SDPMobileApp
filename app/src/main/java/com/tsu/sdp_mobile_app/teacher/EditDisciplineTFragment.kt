@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.teacher.ui
+package com.tsu.sdp_mobile_app.teacher
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,17 +8,17 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.tsu.sdp_mobile_app.R
 
-class MyDisciplineFragment : Fragment() {
+class EditDisciplineTFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MyDisciplineFragment()
+        fun newInstance() = EditDisciplineTFragment()
     }
 
-    private lateinit var viewModel: MyDisciplineViewModel
+    private lateinit var viewModel: DisciplineTViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[MyDisciplineViewModel::class.java]
+        viewModel = ViewModelProvider(this)[DisciplineTViewModel::class.java]
         // TODO: Use the ViewModel
     }
 
@@ -26,7 +26,7 @@ class MyDisciplineFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_my_discipline, container, false)
+        return inflater.inflate(R.layout.fragment_discipline_t, container, false)
     }
 
 }

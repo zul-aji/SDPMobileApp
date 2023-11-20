@@ -1,4 +1,4 @@
-package com.tsu.sdp_mobile_app.admin.data.network
+package com.tsu.sdp_mobile_app.data.network
 
 sealed class Resource <out T> {
     data class Success<out T>(val value: T) : Resource<T>()

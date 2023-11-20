@@ -4,13 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tsu.sdp_mobile_app.admin.data.network.Resource
-import com.tsu.sdp_mobile_app.admin.data.repository.DirectionRepo
-import com.tsu.sdp_mobile_app.admin.data.response.Direction
-import com.tsu.sdp_mobile_app.admin.data.response.DirectionRequest
-import com.tsu.sdp_mobile_app.admin.data.response.DirectionResponse
-import com.tsu.sdp_mobile_app.admin.data.response.DirectionsResponse
-import com.tsu.sdp_mobile_app.admin.data.response.FacultiesResponse
+import com.tsu.sdp_mobile_app.data.network.Resource
+import com.tsu.sdp_mobile_app.data.repository.DirectionRepo
+import com.tsu.sdp_mobile_app.data.response.Direction
+import com.tsu.sdp_mobile_app.data.response.DirectionRequest
+import com.tsu.sdp_mobile_app.data.response.DirectionResponse
+import com.tsu.sdp_mobile_app.data.response.DirectionsResponse
+import com.tsu.sdp_mobile_app.data.response.FacultiesResponse
 import kotlinx.coroutines.launch
 
 class EdudirViewModel(

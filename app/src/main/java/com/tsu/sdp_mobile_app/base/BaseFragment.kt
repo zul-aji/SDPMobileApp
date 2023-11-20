@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
-import com.tsu.sdp_mobile_app.admin.data.network.DataSource
-import com.tsu.sdp_mobile_app.admin.data.repository.BaseRepo
+import com.tsu.sdp_mobile_app.data.network.DataSource
+import com.tsu.sdp_mobile_app.data.repository.BaseRepo
 
 abstract class BaseFragment<VM: ViewModel, B: ViewBinding, R: BaseRepo> : Fragment() {
 

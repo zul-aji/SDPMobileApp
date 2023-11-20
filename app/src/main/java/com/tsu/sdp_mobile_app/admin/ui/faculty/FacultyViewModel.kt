@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tsu.sdp_mobile_app.admin.data.network.Resource
-import com.tsu.sdp_mobile_app.admin.data.repository.FacultyRepo
-import com.tsu.sdp_mobile_app.admin.data.response.FacultiesResponse
-import com.tsu.sdp_mobile_app.admin.data.response.Faculty
-import com.tsu.sdp_mobile_app.admin.data.response.FacultyResponse
+import com.tsu.sdp_mobile_app.data.network.Resource
+import com.tsu.sdp_mobile_app.data.repository.FacultyRepo
+import com.tsu.sdp_mobile_app.data.response.FacultiesResponse
+import com.tsu.sdp_mobile_app.data.response.Faculty
+import com.tsu.sdp_mobile_app.data.response.FacultyResponse
 import kotlinx.coroutines.launch
 
 class FacultyViewModel(

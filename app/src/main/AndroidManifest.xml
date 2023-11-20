@@ -15,7 +15,7 @@
         android:theme="@style/Theme.SDP_mobile_app"
         tools:targetApi="31">
         <activity
-            android:name=".teacher.MyDisciplineActivity"
+            android:name=".teacher.DisciplineTActivity"
             android:exported="false" />
         <activity
             android:name=".MainTeacherActivity"
