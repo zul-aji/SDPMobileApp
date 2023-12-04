@@ -11,15 +11,13 @@ import com.tsu.sdp_mobile_app.admin.DisciplineActivity
 import com.tsu.sdp_mobile_app.admin.FacultyActivity
 import com.tsu.sdp_mobile_app.admin.GroupActivity
 import com.tsu.sdp_mobile_app.admin.EdudirActivity
+import com.tsu.sdp_mobile_app.admin.RequestActivity
 import com.tsu.sdp_mobile_app.admin.ui.startNewActivity
 import com.tsu.sdp_mobile_app.databinding.FragmentManageBinding
 
 class ManageFragment : Fragment() {
 
     private var _binding: FragmentManageBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -27,8 +25,6 @@ class ManageFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        val manageViewModel =
-//            ViewModelProvider(this)[ManageViewModel::class.java]
 
         _binding = FragmentManageBinding.inflate(inflater, container, false)
         return binding.root
@@ -51,6 +47,10 @@ class ManageFragment : Fragment() {
 
         binding.disciplinesButton.setOnClickListener {
             requireActivity().startNewActivity(DisciplineActivity::class.java)
+        }
+
+        binding.requestButton.setOnClickListener {
+            requireActivity().startNewActivity(RequestActivity::class.java)
         }
     }
 
