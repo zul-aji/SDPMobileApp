@@ -14,7 +14,7 @@ class RequestAdapter (
 
     class RequestViewHolder (binding: RecyclerItemRequestBinding) :
             RecyclerView.ViewHolder(binding.root) {
-                val item = binding.item
+
             }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RequestViewHolder {

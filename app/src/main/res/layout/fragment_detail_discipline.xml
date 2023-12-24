@@ -8,7 +8,7 @@
     tools:context=".admin.ui.discipline.AddDisciplineFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/add_discipline"
+        android:id="@+id/detail_discipline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -26,10 +26,10 @@
             app:layout_constraintVertical_bias="0"/>
 
         <TextView
-            android:id="@+id/add_discipline_tv"
+            android:id="@+id/discipline_name_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Discipline"
+            android:text="Discipline Name"
             android:textColor="#006BB4"
             android:textSize="30dp"
             android:textStyle="bold"
@@ -40,36 +40,35 @@
             app:layout_constraintVertical_bias="0.05" />
 
         <TextView
-            android:id="@+id/add_discipline_name_tv"
+            android:id="@+id/discipline_group_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
-            android:text="Discipline Name"
+            android:text="Group"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_tv"
-            app:layout_constraintVertical_bias="0.01" />
+            app:layout_constraintTop_toBottomOf="@+id/discipline_name_tv"
+            app:layout_constraintVertical_bias="0.03" />
 
-        <EditText
-            android:id="@+id/add_discipline_name"
+        <TextView
+            android:id="@+id/discipline_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
             android:padding="6dp"
             android:textSize="20dp"
             android:ems="10"
-            android:inputType="text"
             android:background="@drawable/rectangle_box_style"
             app:layout_constraintVertical_bias="0.01"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_name_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/discipline_group_tv" />
 
         <TextView
-            android:id="@+id/add_discipline_desc_tv"
+            android:id="@+id/discipline_desc_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -78,11 +77,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_name"
+            app:layout_constraintTop_toBottomOf="@+id/discipline_group"
             app:layout_constraintVertical_bias="0.03" />
 
-        <EditText
-            android:id="@+id/add_discipline_desc"
+        <TextView
+            android:id="@+id/discipline_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -90,17 +89,16 @@
             android:textSize="20dp"
             android:ems="10"
             android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:lines="2"
+            android:lines="4"
             android:background="@drawable/rectangle_box_style"
             app:layout_constraintVertical_bias="0.01"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_desc_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/discipline_desc_tv" />
 
         <TextView
-            android:id="@+id/add_discipline_liter_tv"
+            android:id="@+id/discipline_literature_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -109,11 +107,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_desc"
+            app:layout_constraintTop_toBottomOf="@+id/discipline_desc"
             app:layout_constraintVertical_bias="0.03" />
 
-        <EditText
-            android:id="@+id/add_discipline_liter"
+        <TextView
+            android:id="@+id/discipline_literature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -121,46 +119,44 @@
             android:textSize="20dp"
             android:ems="10"
             android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:lines="2"
+            android:lines="3"
             android:background="@drawable/rectangle_box_style"
             app:layout_constraintVertical_bias="0.01"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_liter_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/discipline_literature_tv" />
 
         <TextView
-            android:id="@+id/add_discipline_year_tv"
+            android:id="@+id/discipline_acyear_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
-            android:text="Year"
+            android:text="Academic Year"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_liter"
+            app:layout_constraintTop_toBottomOf="@+id/discipline_literature"
             app:layout_constraintVertical_bias="0.03" />
 
-        <EditText
-            android:id="@+id/add_discipline_year"
+        <TextView
+            android:id="@+id/discipline_acyear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
             android:padding="6dp"
             android:textSize="20dp"
             android:ems="10"
-            android:inputType="text"
             android:background="@drawable/rectangle_box_style"
             app:layout_constraintVertical_bias="0.01"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_year_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/discipline_acyear_tv" />
 
         <TextView
-            android:id="@+id/add_discipline_day_tv"
+            android:id="@+id/discipline_day_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -169,11 +165,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_year"
+            app:layout_constraintTop_toBottomOf="@+id/discipline_acyear"
             app:layout_constraintVertical_bias="0.03" />
 
         <Spinner
-            android:id="@+id/add_discipline_day"
+            android:id="@+id/edit_discipline_day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -184,10 +180,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_day_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/discipline_day_tv" />
 
         <TextView
-            android:id="@+id/add_discipline_time_tv"
+            android:id="@+id/discipline_time_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -196,11 +192,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_day"
+            app:layout_constraintTop_toBottomOf="@+id/edit_discipline_day"
             app:layout_constraintVertical_bias="0.03" />
 
         <Spinner
-            android:id="@+id/add_discipline_time"
+            android:id="@+id/discipline_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -211,10 +207,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_time_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/discipline_time_tv" />
 
         <TextView
-            android:id="@+id/add_discipline_build_tv"
+            android:id="@+id/discipline_build_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -223,11 +219,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_time"
+            app:layout_constraintTop_toBottomOf="@+id/discipline_time"
             app:layout_constraintVertical_bias="0.03" />
 
         <EditText
-            android:id="@+id/add_discipline_build"
+            android:id="@+id/edit_discipline_build"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -236,14 +232,14 @@
             android:ems="10"
             android:inputType="text"
             android:background="@drawable/rectangle_box_style"
-            app:layout_constraintVertical_bias="0.01"
+            app:layout_constraintVertical_bias="0.03"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_build_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/discipline_build_tv" />
 
         <TextView
-            android:id="@+id/add_discipline_room_tv"
+            android:id="@+id/discipline_room_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -252,11 +248,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_build"
+            app:layout_constraintTop_toBottomOf="@+id/edit_discipline_build"
             app:layout_constraintVertical_bias="0.03" />
 
         <EditText
-            android:id="@+id/add_discipline_room"
+            android:id="@+id/edit_discipline_room"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -269,32 +265,47 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_room_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/discipline_room_tv" />
 
         <CheckBox
-            android:id="@+id/add_discipline_online_box"
+            android:id="@+id/discipline_online_box"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="35dp"
             android:text="Online Format"
-            app:layout_constraintVertical_bias="0.07"
+            app:layout_constraintVertical_bias="0.05"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_room" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_discipline_room" />
 
         <Button
-            android:id="@+id/add_discipline_add_button"
+            android:id="@+id/discipline_save_button"
+            android:layout_marginVertical="@dimen/activity_vertical_margin"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:background="@drawable/back_blue"
-            android:text="Add"
+            android:text="Save"
             android:textColor="@color/white"
             android:textStyle="bold"
-            app:layout_constraintVertical_bias="0.8"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/discipline_delete_button"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_discipline_online_box"/>
+            app:layout_constraintTop_toBottomOf="@+id/discipline_online_box"/>
+
+        <Button
+            android:id="@+id/discipline_delete_button"
+            android:layout_marginVertical="@dimen/activity_vertical_margin"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back_red"
+            android:text="Delete"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/discipline_save_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/discipline_online_box"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

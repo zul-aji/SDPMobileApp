@@ -12,7 +12,7 @@ class RequestActivity : AppCompatActivity() {
         setContentView(R.layout.activity_request)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, RequestFragment.newInstance())
+                .replace(R.id.container, RequestFragment())
                 .commitNow()
         }
     }
